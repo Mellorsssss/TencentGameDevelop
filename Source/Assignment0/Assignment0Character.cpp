@@ -8,6 +8,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "FPSProjectile.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AAssignment0Character
@@ -74,6 +76,14 @@ void AAssignment0Character::SetupPlayerInputComponent(class UInputComponent* Pla
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AAssignment0Character::OnResetVR);
+	/*
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AAssignment0Character::Fire);*/
+}
+
+void AAssignment0Character::BeginPlay()
+{
+	Super::BeginPlay();
+	GameMode = Cast<AAssignment0GameMode> (UGameplayStatics::GetGameMode(this));
 }
 
 
@@ -130,5 +140,38 @@ void AAssignment0Character::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
+	}
+}
+
+
+void AAssignment0Character::Fire()
+{
+	// 尝试发射物体。
+	if (ProjectileClass)
+	{
+		// 获取摄像机变换。
+		FVector CameraLocation;
+		FRotator CameraRotation;
+		GetActorEyesViewPoint(CameraLocation, CameraRotation);
+		// 将 MuzzleOffset 从摄像机空间变换到世界空间。
+		FVector MuzzleLocation = CameraLocation + FTransform(CameraRotation).TransformVector(MuzzleOffset);
+		FRotator MuzzleRotation = CameraRotation;
+		// 将准星稍微上抬。
+		MuzzleRotation.Pitch += 10.0f;
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = this;
+			//SpawnParams.Instigator = NULL;
+			// 在枪口处生成发射物。
+			AFPSProjectile* Projectile = World->SpawnActor<AFPSProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
+			if (Projectile)
+			{
+				// 设置发射物的初始轨道。
+				FVector LaunchDirection = MuzzleRotation.Vector();
+				Projectile->FireInDirection(LaunchDirection);
+			}
+		}
 	}
 }
