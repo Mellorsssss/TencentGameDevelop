@@ -59,6 +59,12 @@ void AFPSProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor
 {
 	if (OtherActor != this && OtherComponent->IsSimulatingPhysics())
 	{
+		if (GEngine)
+		{
+			// 显示调试信息五秒。 
+			// -1"键"值（首个参数）说明我们无需更新或刷新此消息。
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Hit the item!"));
+		}
 		OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
 	}
 }

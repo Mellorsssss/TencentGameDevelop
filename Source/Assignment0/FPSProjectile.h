@@ -37,5 +37,6 @@ public:
 	void FireInDirection(const FVector& ShootDirection);
 
 	//发射物命中物体时调用的函数。
+	UFUNCTION(BlueprintCallable)
 	void OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit);
 };

@@ -16,6 +16,7 @@
 
 AAssignment0Character::AAssignment0Character()
 {
+	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -157,7 +158,7 @@ void AAssignment0Character::Fire()
 		FVector MuzzleLocation = CameraLocation + FTransform(CameraRotation).TransformVector(MuzzleOffset);
 		FRotator MuzzleRotation = CameraRotation;
 		// ½«×¼ÐÇÉÔÎ¢ÉÏÌ§¡£
-		MuzzleRotation.Pitch += 10.0f;
+		//MuzzleRotation.Pitch += 0.0f;
 		UWorld* World = GetWorld();
 		if (World)
 		{

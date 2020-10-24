@@ -6,7 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "Assignment0GameMode.generated.h"
 
-enum EState {
+enum class EState {
 	EBegin,
 	EGame,
 	EWin,
@@ -24,6 +24,9 @@ public:
 	AAssignment0GameMode();
 	void SetEState(EState state);
 	EState GetEstate()const;
+
+	UFUNCTION(BlueprintCallable, Category = "mode")
+	void RestartTpsGame();
 
 };
 

@@ -21,3 +21,12 @@ void AAssignment0GameMode::SetEState(EState state) {
 EState AAssignment0GameMode::GetEstate() const {
 	return current_state;
 }
+
+void AAssignment0GameMode::RestartTpsGame()
+{
+	APlayerController* PC =  GetWorld()->GetFirstPlayerController();
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Restart!"));
+	}
+	RestartPlayer(PC);
+}
