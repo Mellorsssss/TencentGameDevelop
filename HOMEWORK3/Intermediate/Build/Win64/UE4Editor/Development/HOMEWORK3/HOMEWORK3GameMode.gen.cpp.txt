@@ -1,9 +1,0 @@
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Source\HOMEWORK3/HOMEWORK3GameMode.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Inc\HOMEWORK3\HOMEWORK3GameMode.generated.h
