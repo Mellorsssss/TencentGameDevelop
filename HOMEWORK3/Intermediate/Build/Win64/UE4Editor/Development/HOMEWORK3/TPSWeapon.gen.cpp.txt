@@ -1,5 +1,0 @@
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Source\HOMEWORK3/Public/TPSWeapon.h
-E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Inc\HOMEWORK3\TPSWeapon.generated.h
