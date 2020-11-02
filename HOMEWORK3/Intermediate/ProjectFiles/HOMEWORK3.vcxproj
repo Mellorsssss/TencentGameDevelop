@@ -1,0 +1,1691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Invalid|Win32">
+      <Configuration>Invalid</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Invalid|x64">
+      <Configuration>Invalid</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Invalid|arm64">
+      <Configuration>Invalid</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|arm64">
+      <Configuration>Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Editor|Win32">
+      <Configuration>Debug_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Editor|x64">
+      <Configuration>Debug_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Editor|arm64">
+      <Configuration>Debug_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug|Win32">
+      <Configuration>Mac_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug|x64">
+      <Configuration>Mac_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug|arm64">
+      <Configuration>Mac_Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug_Editor|Win32">
+      <Configuration>Mac_Debug_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug_Editor|x64">
+      <Configuration>Mac_Debug_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Debug_Editor|arm64">
+      <Configuration>Mac_Debug_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Debug|Win32">
+      <Configuration>Android_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Debug|x64">
+      <Configuration>Android_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Debug|arm64">
+      <Configuration>Android_Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Debug|Win32">
+      <Configuration>XXX_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Debug|x64">
+      <Configuration>XXX_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Debug|arm64">
+      <Configuration>XXX_Debug</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame|Win32">
+      <Configuration>DebugGame</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame|x64">
+      <Configuration>DebugGame</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame|arm64">
+      <Configuration>DebugGame</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame_Editor|Win32">
+      <Configuration>DebugGame_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame_Editor|x64">
+      <Configuration>DebugGame_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame_Editor|arm64">
+      <Configuration>DebugGame_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame|Win32">
+      <Configuration>Mac_DebugGame</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame|x64">
+      <Configuration>Mac_DebugGame</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame|arm64">
+      <Configuration>Mac_DebugGame</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame_Editor|Win32">
+      <Configuration>Mac_DebugGame_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame_Editor|x64">
+      <Configuration>Mac_DebugGame_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_DebugGame_Editor|arm64">
+      <Configuration>Mac_DebugGame_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_DebugGame|Win32">
+      <Configuration>Android_DebugGame</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_DebugGame|x64">
+      <Configuration>Android_DebugGame</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_DebugGame|arm64">
+      <Configuration>Android_DebugGame</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_DebugGame|Win32">
+      <Configuration>XXX_DebugGame</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_DebugGame|x64">
+      <Configuration>XXX_DebugGame</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_DebugGame|arm64">
+      <Configuration>XXX_DebugGame</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development|Win32">
+      <Configuration>Development</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development|x64">
+      <Configuration>Development</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development|arm64">
+      <Configuration>Development</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development_Editor|Win32">
+      <Configuration>Development_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development_Editor|x64">
+      <Configuration>Development_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development_Editor|arm64">
+      <Configuration>Development_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development|Win32">
+      <Configuration>Mac_Development</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development|x64">
+      <Configuration>Mac_Development</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development|arm64">
+      <Configuration>Mac_Development</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development_Editor|Win32">
+      <Configuration>Mac_Development_Editor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development_Editor|x64">
+      <Configuration>Mac_Development_Editor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Development_Editor|arm64">
+      <Configuration>Mac_Development_Editor</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Development|Win32">
+      <Configuration>Android_Development</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Development|x64">
+      <Configuration>Android_Development</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Development|arm64">
+      <Configuration>Android_Development</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Development|Win32">
+      <Configuration>XXX_Development</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Development|x64">
+      <Configuration>XXX_Development</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Development|arm64">
+      <Configuration>XXX_Development</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|x64">
+      <Configuration>Shipping</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|arm64">
+      <Configuration>Shipping</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Shipping|Win32">
+      <Configuration>Mac_Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Shipping|x64">
+      <Configuration>Mac_Shipping</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Shipping|arm64">
+      <Configuration>Mac_Shipping</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Shipping|Win32">
+      <Configuration>Android_Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Shipping|x64">
+      <Configuration>Android_Shipping</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Shipping|arm64">
+      <Configuration>Android_Shipping</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Shipping|Win32">
+      <Configuration>XXX_Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Shipping|x64">
+      <Configuration>XXX_Shipping</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Shipping|arm64">
+      <Configuration>XXX_Shipping</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|x64">
+      <Configuration>Test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|arm64">
+      <Configuration>Test</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Test|Win32">
+      <Configuration>Mac_Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Test|x64">
+      <Configuration>Mac_Test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Mac_Test|arm64">
+      <Configuration>Mac_Test</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Test|Win32">
+      <Configuration>Android_Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Test|x64">
+      <Configuration>Android_Test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Android_Test|arm64">
+      <Configuration>Android_Test</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Test|Win32">
+      <Configuration>XXX_Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Test|x64">
+      <Configuration>XXX_Test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="XXX_Test|arm64">
+      <Configuration>XXX_Test</Configuration>
+      <Platform>arm64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C1F8636C-B4DE-4AC7-9687-345AB7A48057}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <RootNamespace>HOMEWORK3</RootNamespace>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <TargetRuntime>Native</TargetRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectCapability Include="MLProject" />
+    <PropertyPageSchema Include="$(LOCALAPPDATA)\Microsoft\VisualStudio\MagicLeap\debugger.xaml" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|arm64'" Label="Configuration">
+		<AppContainerApplication>true</AppContainerApplication>
+		<ApplicationType>Windows Store</ApplicationType>
+		<ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+		<WindowsAppContainer>true</WindowsAppContainer>
+		<AppxPackage>true</AppxPackage>
+		<WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|arm64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|Win32'">
+    <NMakeBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeCleanCommandLine>
+    <NMakeOutput>Invalid Output</NMakeOutput>
+    <OutDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</OutDir>
+    <IntDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|x64'">
+    <NMakeBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeCleanCommandLine>
+    <NMakeOutput>Invalid Output</NMakeOutput>
+    <OutDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</OutDir>
+    <IntDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|arm64'">
+    <NMakeBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeCleanCommandLine>
+    <NMakeOutput>Invalid Output</NMakeOutput>
+    <OutDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</OutDir>
+    <IntDir>E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Unused\</IntDir>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win32 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win32 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win32 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win32\HOMEWORK3-Win32-Debug.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win64 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win64 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win64 Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win64\HOMEWORK3-Win64-Debug.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Editor|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Win64 Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Win64 Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Win64 Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Win64\UE4Editor-Win64-Debug.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 HoloLens Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 HoloLens Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 HoloLens Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\HoloLens\HOMEWORK3-HoloLens-Debug.exe</NMakeOutput>
+		<AdditionalOptions>/ZW /ZW:nostdlib</AdditionalOptions>
+		<NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions);PLATFORM_HOLOLENS=1;HOLOLENS=1;</NMakePreprocessorDefinitions>
+		<NMakeAssemblySearchPath>$(NMakeAssemblySearchPath);D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\lib\x86\Store\references</NMakeAssemblySearchPath>
+		<NMakeForcedUsingAssemblies>$(NMakeForcedUsingAssemblies);D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd;D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0\Windows.Foundation.UniversalApiContract.winmd;platform.winmd</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
+		<RemoveExtraDeployFiles>false</RemoveExtraDeployFiles>
+		<LayoutDir>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\AppX</LayoutDir>
+		<AppxPackageRecipe>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\HOMEWORK3.build.appxrecipe</AppxPackageRecipe>
+	</PropertyGroup>
+    <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Local.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Simulator.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Remote.xml" />
+    </ItemGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Mac Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Mac Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Mac Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Mac\HOMEWORK3-Mac-Debug</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Debug_Editor|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Mac Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Mac Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Mac Debug -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Mac\UE4Editor-Mac-Debug</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Android Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Android Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Android Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Android\HOMEWORK3-Android-Debug.so</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Debug|Win32'">
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 XXX Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 XXX Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 XXX Debug -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\XXX\HOMEWORK3-XXX-Debug.xexe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win32 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win32 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win32 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win32\HOMEWORK3-Win32-DebugGame.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win64 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win64 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win64 DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win64\HOMEWORK3-Win64-DebugGame.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Win64 DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Win64 DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Win64 DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Win64\UE4Editor-Win64-DebugGame.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 HoloLens DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 HoloLens DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 HoloLens DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\HoloLens\HOMEWORK3-HoloLens-DebugGame.exe</NMakeOutput>
+		<AdditionalOptions>/ZW /ZW:nostdlib</AdditionalOptions>
+		<NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions);PLATFORM_HOLOLENS=1;HOLOLENS=1;</NMakePreprocessorDefinitions>
+		<NMakeAssemblySearchPath>$(NMakeAssemblySearchPath);D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\lib\x86\Store\references</NMakeAssemblySearchPath>
+		<NMakeForcedUsingAssemblies>$(NMakeForcedUsingAssemblies);D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd;D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0\Windows.Foundation.UniversalApiContract.winmd;platform.winmd</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'">
+		<RemoveExtraDeployFiles>false</RemoveExtraDeployFiles>
+		<LayoutDir>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\AppX</LayoutDir>
+		<AppxPackageRecipe>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\HOMEWORK3.build.appxrecipe</AppxPackageRecipe>
+	</PropertyGroup>
+    <ItemGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|arm64'">
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Local.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Simulator.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Remote.xml" />
+    </ItemGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Mac DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Mac DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Mac DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Mac\HOMEWORK3-Mac-DebugGame</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_DebugGame_Editor|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Mac DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Mac DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Mac DebugGame -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Mac\UE4Editor-Mac-DebugGame</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_DebugGame|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Android DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Android DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Android DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Android\HOMEWORK3-Android-DebugGame.so</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_DebugGame|Win32'">
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 XXX DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 XXX DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 XXX DebugGame -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\XXX\HOMEWORK3-XXX-DebugGame.xexe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win32 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win32 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win32 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win32\HOMEWORK3.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win64 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win64 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win64 Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win64\HOMEWORK3.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Win64 Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Win64 Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Win64 Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Win64\UE4Editor.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 HoloLens Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 HoloLens Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 HoloLens Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\HoloLens\HOMEWORK3.exe</NMakeOutput>
+		<AdditionalOptions>/ZW /ZW:nostdlib</AdditionalOptions>
+		<NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions);PLATFORM_HOLOLENS=1;HOLOLENS=1;</NMakePreprocessorDefinitions>
+		<NMakeAssemblySearchPath>$(NMakeAssemblySearchPath);D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\lib\x86\Store\references</NMakeAssemblySearchPath>
+		<NMakeForcedUsingAssemblies>$(NMakeForcedUsingAssemblies);D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd;D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0\Windows.Foundation.UniversalApiContract.winmd;platform.winmd</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'">
+		<RemoveExtraDeployFiles>false</RemoveExtraDeployFiles>
+		<LayoutDir>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\AppX</LayoutDir>
+		<AppxPackageRecipe>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\HOMEWORK3.build.appxrecipe</AppxPackageRecipe>
+	</PropertyGroup>
+    <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Development|arm64'">
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Local.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Simulator.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Remote.xml" />
+    </ItemGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Mac Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Mac Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Mac Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Mac\HOMEWORK3</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Development_Editor|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat -Target="HOMEWORK3Editor Mac Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat -Target="HOMEWORK3Editor Mac Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat -Target="HOMEWORK3Editor Mac Development -Project=\"$(SolutionDir)HOMEWORK3.uproject\"" -Target="ShaderCompileWorker Win64 Development -Quiet" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>E:\TencentGameDevelop\UnrealEngine\Engine\Binaries\Mac\UE4Editor</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Development|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Android Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Android Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Android Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Android\HOMEWORK3.so</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Development|Win32'">
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 XXX Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 XXX Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 XXX Development -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\XXX\HOMEWORK3.xexe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win32 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win32 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win32 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win32\HOMEWORK3-Win32-Shipping.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win64 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win64 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win64 Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win64\HOMEWORK3-Win64-Shipping.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 HoloLens Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 HoloLens Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 HoloLens Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\HoloLens\HOMEWORK3-HoloLens-Shipping.exe</NMakeOutput>
+		<AdditionalOptions>/ZW /ZW:nostdlib</AdditionalOptions>
+		<NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions);PLATFORM_HOLOLENS=1;HOLOLENS=1;</NMakePreprocessorDefinitions>
+		<NMakeAssemblySearchPath>$(NMakeAssemblySearchPath);D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\lib\x86\Store\references</NMakeAssemblySearchPath>
+		<NMakeForcedUsingAssemblies>$(NMakeForcedUsingAssemblies);D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd;D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0\Windows.Foundation.UniversalApiContract.winmd;platform.winmd</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'">
+		<RemoveExtraDeployFiles>false</RemoveExtraDeployFiles>
+		<LayoutDir>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\AppX</LayoutDir>
+		<AppxPackageRecipe>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\HOMEWORK3.build.appxrecipe</AppxPackageRecipe>
+	</PropertyGroup>
+    <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|arm64'">
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Local.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Simulator.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Remote.xml" />
+    </ItemGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Shipping|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Mac Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Mac Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Mac Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Mac\HOMEWORK3-Mac-Shipping</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Shipping|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Android Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Android Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Android Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Android\HOMEWORK3-Android-Shipping.so</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 XXX Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 XXX Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 XXX Shipping -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\XXX\HOMEWORK3-XXX-Shipping.xexe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win32 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win32 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win32 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win32\HOMEWORK3-Win32-Test.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Win64 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Win64 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Win64 Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Win64\HOMEWORK3-Win64-Test.exe</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 HoloLens Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 HoloLens Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 HoloLens Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\HoloLens\HOMEWORK3-HoloLens-Test.exe</NMakeOutput>
+		<AdditionalOptions>/ZW /ZW:nostdlib</AdditionalOptions>
+		<NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions);PLATFORM_HOLOLENS=1;HOLOLENS=1;</NMakePreprocessorDefinitions>
+		<NMakeAssemblySearchPath>$(NMakeAssemblySearchPath);D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\lib\x86\Store\references</NMakeAssemblySearchPath>
+		<NMakeForcedUsingAssemblies>$(NMakeForcedUsingAssemblies);D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd;D:\Windows Kits\10\References\10.0.18362.0\Windows.Foundation.UniversalApiContract\8.0.0.0\Windows.Foundation.UniversalApiContract.winmd;platform.winmd</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'">
+		<RemoveExtraDeployFiles>false</RemoveExtraDeployFiles>
+		<LayoutDir>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\AppX</LayoutDir>
+		<AppxPackageRecipe>E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Binaries\HoloLens\HOMEWORK3.build.appxrecipe</AppxPackageRecipe>
+	</PropertyGroup>
+    <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Test|arm64'">
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Local.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Simulator.xml" />
+		<PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\AppHostDebugger_Remote.xml" />
+    </ItemGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mac_Test|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Mac Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Mac Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Mac Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Mac\HOMEWORK3-Mac-Test</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Test|Win32'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 Android Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 Android Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 Android Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\Android\HOMEWORK3-Android-Test.so</NMakeOutput>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XXX_Test|Win32'">
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Build.bat HOMEWORK3 XXX Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat HOMEWORK3 XXX Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>E:\TencentGameDevelop\UnrealEngine\Engine\Build\BatchFiles\Clean.bat HOMEWORK3 XXX Test -Project="$(SolutionDir)HOMEWORK3.uproject" -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>..\..\Binaries\XXX\HOMEWORK3-XXX-Test.xexe</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(IncludePath);E:\TencentGameDevelop\UnrealEngine\Engine\Source;..\..\Source\HOMEWORK3\Private;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Engine\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Engine\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Core;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\TraceLog\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Core\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\TraceLog;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NetCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Net;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Net\Core\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Net\Core\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ApplicationCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\ApplicationCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\RHI;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\RHI\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Json;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Json\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SlateCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\SlateCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\InputCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\InputCore\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\InputCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Slate;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Slate\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ImageWrapper;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\ImageWrapper\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Messaging;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Messaging\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MessagingCommon;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\MessagingCommon\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\RenderCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\RenderCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AnalyticsET;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Analytics;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Analytics\AnalyticsET\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Analytics;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Analytics\Analytics\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Sockets;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Sockets\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AssetRegistry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AssetRegistry\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\EngineMessages;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\EngineMessages\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\EngineSettings;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\EngineSettings\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\EngineSettings\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SynthBenchmark;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\SynthBenchmark\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Renderer;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Renderer\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GameplayTags;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\GameplayTags\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\GameplayTags\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PacketHandler;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PacketHandlers;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PacketHandlers\PacketHandler\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PacketHandlers\PacketHandler\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ReliabilityHandlerComponent;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PacketHandlers\ReliabilityHandlerComponent\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioPlatformConfiguration;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AudioPlatformConfiguration\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MeshDescription;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\MeshDescription\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\StaticMeshDescription;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\StaticMeshDescription\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PakFile;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PakFile\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\RSA;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\RSA\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NetworkReplayStreaming;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\NetworkReplayStreaming;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\NetworkReplayStreaming\NetworkReplayStreaming\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PhysicsCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Chaos;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\Chaos\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ChaosCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\ChaosCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Voronoi;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\Voronoi\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\FieldSystemCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\FieldSystem\Source;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\FieldSystem\Source\FieldSystemCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SignalProcessing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\SignalProcessing\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioExtensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AudioExtensions\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixerCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AudioMixerCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Programs\UnrealLightmass\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\Android\AndroidDeviceDetection\Public\Interfaces;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\UnrealEd\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\UnrealEd\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\DirectoryWatcher;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\DirectoryWatcher\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Documentation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\Documentation\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Projects;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Projects\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SandboxFile;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\SandboxFile\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\EditorStyle;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\EditorStyle\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SourceControl;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\SourceControl\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEdMessages;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\UnrealEdMessages\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\UnrealEdMessages\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GameplayDebugger;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\GameplayDebugger\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\BlueprintGraph;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\BlueprintGraph\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\BlueprintGraph\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\EditorSubsystem;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\EditorSubsystem\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HTTP;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Online;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Online\HTTP\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealAudio;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\UnrealAudio\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\FunctionalTesting;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\FunctionalTesting\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\FunctionalTesting\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AutomationController;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\AutomationController\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Localization;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\Localization\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\AudioEditor\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\AudioEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixer;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AudioMixer\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AudioMixer\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\TargetPlatform;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\TargetPlatform\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\LevelEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\LevelEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Settings;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\Settings\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\IntroTutorials;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\IntroTutorials\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\HeadMountedDisplay\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\VREditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\VREditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\VREditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\CommonMenuExtensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\CommonMenuExtensions\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Landscape;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Landscape\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Landscape\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PropertyEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\PropertyEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ActorPickerMode;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\ActorPickerMode\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SceneDepthPickerMode;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\SceneDepthPickerMode\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\DetailCustomizations;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\DetailCustomizations\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ClassViewer;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\ClassViewer\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GraphEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\GraphEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\StructViewer;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\StructViewer\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ContentBrowser;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\ContentBrowser\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UELibSampleRate;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\libSampleRate\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NetworkFileSystem;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\NetworkFileSystem\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UMG;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\UMG\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MovieScene;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\MovieScene\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\TimeManagement;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\TimeManagement\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MovieSceneTracks;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\MovieSceneTracks\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AnimationCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AnimationCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PropertyPath;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PropertyPath\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\NavigationSystem\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MeshBuilder;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\MeshBuilder\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MaterialShaderQualitySettings;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\MaterialShaderQualitySettings\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\InteractiveToolsFramework;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\InteractiveToolsFramework\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ToolMenusEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\ToolMenusEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\XAudio2;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Windows;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Windows\XAudio2\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixerXAudio2;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AssetTagsEditor;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\AssetTagsEditor\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\CollectionManager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\CollectionManager\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AddContentDialog;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\AddContentDialog\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MeshUtilities;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\IntelEmbree\Embree2140\Win64\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\MeshUtilities\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MeshMergeUtilities;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\MeshMergeUtilities\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HierarchicalLODUtilities;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\HierarchicalLODUtilities\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MeshReductionInterface;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\MeshReductionInterface\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AssetTools;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Developer\AssetTools\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\KismetCompiler;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\KismetCompiler\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GameplayTasks;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\GameplayTasks\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\GameplayTasks\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AIModule\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AIModule\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Kismet;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\Kismet\Classes;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Editor\Kismet\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsSQ;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\PhysicsSQ\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ChaosSolvers;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\ChaosSolvers\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GeometryCollectionCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\GeometryCollectionCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\GeometryCollectionSimulationCore;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\Experimental\GeometryCollectionSimulationCore\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\ClothingSystemRuntimeInterface\Public;..\Build\Win64\UE4Editor\Inc\HOMEWORK3;..\..\Source;..\..\Source\HOMEWORK3\Public;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality;E:\TencentGameDevelop\UnrealEngine\Engine\Source\Runtime\AugmentedReality\Public;D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110\INCLUDE;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\include\um;D:\Windows Kits\10\include\10.0.18362.0\ucrt;D:\Windows Kits\10\include\10.0.18362.0\shared;D:\Windows Kits\10\include\10.0.18362.0\um;D:\Windows Kits\10\include\10.0.18362.0\winrt;;</IncludePath>
+    <NMakeForcedIncludes>$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeAssemblySearchPath>$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <AdditionalOptions>/std:c++14</AdditionalOptions>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\HOMEWORK3.uproject"/>
+    <None Include="..\..\Source\HOMEWORK3.Target.cs"/>
+    <None Include="..\..\Source\HOMEWORK3Editor.Target.cs"/>
+    <None Include="..\..\Config\DefaultEditor.ini"/>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
+    <None Include="..\..\Config\DefaultEngine.ini"/>
+    <None Include="..\..\Config\DefaultGame.ini"/>
+    <None Include="..\..\Config\DefaultInput.ini"/>
+    <None Include="..\..\Source\HOMEWORK3\HOMEWORK3.Build.cs"/>
+    <ClCompile Include="..\..\Source\HOMEWORK3\HOMEWORK3.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HOMEWORK3\HOMEWORK3.h"/>
+    <ClCompile Include="..\..\Source\HOMEWORK3\HOMEWORK3Character.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HOMEWORK3\HOMEWORK3Character.h"/>
+    <ClCompile Include="..\..\Source\HOMEWORK3\HOMEWORK3GameMode.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HOMEWORK3\HOMEWORK3GameMode.h"/>
+    <ClCompile Include="..\..\Source\HOMEWORK3\Private\TargetGameModeBase.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\HOMEWORK3\Private\TPSPlayerController.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\HOMEWORK3\Private\TPSPlayerState.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\HOMEWORK3\Private\TPSWeapon.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;E:\TencentGameDevelop\UnrealEngine\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\Definitions.HOMEWORK3.h;E:\TencentGameDevelop\UnrealEngine\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HOMEWORK3\Public\TargetGameModeBase.h"/>
+    <ClInclude Include="..\..\Source\HOMEWORK3\Public\TPSPlayerController.h"/>
+    <ClInclude Include="..\..\Source\HOMEWORK3\Public\TPSPlayerState.h"/>
+    <ClInclude Include="..\..\Source\HOMEWORK3\Public\TPSWeapon.h"/>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <PropertyGroup>
+    <CleanDependsOn> $(CleanDependsOn); </CleanDependsOn>
+    <CppCleanDependsOn></CppCleanDependsOn>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

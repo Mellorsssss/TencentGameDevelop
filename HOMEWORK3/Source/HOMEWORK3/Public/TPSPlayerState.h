@@ -22,9 +22,9 @@ public:
 	void AddScore(float ScoreDelta);
 
 
-	/*UFUNCTION(BlueprintCallable, Category = "PlayerState")
-	void SetPlayerName(FText Name);
-	*/
-	/*UFUNCTION(BlueprintCallable, Category = "PlayerState")
-	void GetPlayerName()const;*/
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+	void SetName(FString Name);
+	
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+	FString GetName()const;
 };

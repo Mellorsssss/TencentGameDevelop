@@ -7,3 +7,13 @@ void ATPSPlayerState::AddScore(float ScoreDelta) {
 	Score += ScoreDelta;
 }
 
+void ATPSPlayerState::SetName(FString Name)
+{
+	SetPlayerName(Name);
+}
+
+FString ATPSPlayerState::GetName() const
+{
+	return GetPlayerName();
+}
+

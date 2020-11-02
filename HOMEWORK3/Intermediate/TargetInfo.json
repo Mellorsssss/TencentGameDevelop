@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "HOMEWORK3",
+			"Path": "E:\\TencentGameDevelop\\TencentGameDevelop\\HOMEWORK3\\Source\\HOMEWORK3.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "HOMEWORK3Editor",
+			"Path": "E:\\TencentGameDevelop\\TencentGameDevelop\\HOMEWORK3\\Source\\HOMEWORK3Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\TencentGameDevelop\UnrealEngine).
+  Using 'git status' to determine working set for adaptive non-unity build (E:\TencentGameDevelop\TencentGameDevelop).
+  Waiting for 'git status' command to complete
+  Parsing headers for HOMEWORK3Editor
+    Running UnrealHeaderTool "E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\HOMEWORK3.uproject" "E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\HOMEWORK3Editor\Development\HOMEWORK3Editor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="E:\TencentGameDevelop\UnrealEngine\Engine\Programs\UnrealBuildTool\Log_UHT.txt"
+  Reflection code generated for HOMEWORK3Editor in 5.9506483 seconds
+  Building HOMEWORK3Editor and ShaderCompileWorker...
+  Using Visual Studio 2019 14.27.29111 toolchain (D:\Microsoft Visual Studio\VC\Tools\MSVC\14.27.29110) and Windows 10.0.18362.0 SDK (D:\Windows Kits\10).
+  Building 7 actions with 16 processes...
+    [1/7] HOMEWORK3.init.gen.cpp
+    [2/7] HOMEWORK3GameMode.cpp
+    [3/7] HOMEWORK3Character.gen.cpp
+    [4/7] HOMEWORK3Character.cpp
+    [5/7] UE4Editor-HOMEWORK3-0037.lib
+      ���ڴ����� E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\UE4Editor-HOMEWORK3-0037.lib �Ͷ��� E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\UE4Editor-HOMEWORK3-0037.exp
+    [6/7] UE4Editor-HOMEWORK3-0037.dll
+      ���ڴ����� E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\UE4Editor-HOMEWORK3-0037.suppressed.lib �Ͷ��� E:\TencentGameDevelop\TencentGameDevelop\HOMEWORK3\Intermediate\Build\Win64\UE4Editor\Development\HOMEWORK3\UE4Editor-HOMEWORK3-0037.suppressed.exp
+    [7/7] HOMEWORK3Editor.target
+  Total time in Parallel executor: 7.49 seconds
+  Total execution time: 15.93 seconds

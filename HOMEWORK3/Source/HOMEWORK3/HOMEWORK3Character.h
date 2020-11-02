@@ -31,6 +31,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Player")
+	bool bCrouching;
+
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -64,6 +67,8 @@ protected:
 	void BeginCrouch();
 
 	void EndCrouch();
+
+	void TouchCrouch();
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

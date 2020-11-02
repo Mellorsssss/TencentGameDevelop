@@ -15,6 +15,7 @@ ATPSWeapon::ATPSWeapon()
 	RootComponent = MeshComp;
 
 	ShootRange = 10000.0;
+	MuzzleSocketName = "Muzzle";
 }
 
 // Called when the game starts or when spawned
@@ -48,6 +49,14 @@ void ATPSWeapon::Fire()
 				//DrawDebugLine(GetWorld(), TraceBegin, TraceEnd, FColor::White, false, 1.0, 0, 1.0);
 				UGameplayStatics::ApplyPointDamage(HitedActor, 40.0, EyeRotation.Vector(), HitResult, WeaponOwner->GetInstigatorController(), this, DamageType);
 			}
+
+			if (ImpactEffect) {
+				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, HitResult.Location, HitResult.ImpactNormal.Rotation());
+			}
+		}
+
+		if (MuzzleEffect) {
+			UGameplayStatics::SpawnEmitterAttached(MuzzleEffect, MeshComp, MuzzleSocketName);
 		}
 
 		

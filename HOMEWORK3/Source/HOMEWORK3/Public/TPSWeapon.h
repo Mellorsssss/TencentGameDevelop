@@ -4,9 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Particles/ParticleSystem.h"
 #include "TPSWeapon.generated.h"
 
 class UDamageType;
+class UParticleSystem;
+
 UCLASS()
 class HOMEWORK3_API ATPSWeapon : public AActor
 {
@@ -32,6 +35,15 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	TSubclassOf<UDamageType> DamageType;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	UParticleSystem* MuzzleEffect;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	UParticleSystem* ImpactEffect;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
+	FName MuzzleSocketName;
+	//void PlayFireEffect();
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

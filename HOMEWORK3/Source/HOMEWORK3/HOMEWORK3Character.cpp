@@ -45,6 +45,7 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+	bCrouching = false;
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -84,8 +85,8 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AHOMEWORK3Character::OnResetVR);
 
 	// crouch handle
-	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AHOMEWORK3Character::BeginCrouch);
-	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AHOMEWORK3Character::EndCrouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AHOMEWORK3Character::TouchCrouch);
+	//PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AHOMEWORK3Character::EndCrouch);
 }
 
 
@@ -112,6 +113,18 @@ void AHOMEWORK3Character::BeginCrouch()
 void AHOMEWORK3Character::EndCrouch()
 {
 	UnCrouch();
+}
+
+void AHOMEWORK3Character::TouchCrouch()
+{
+	if (bCrouching) {
+		bCrouching = false;
+		UnCrouch();
+	}
+	else {
+		bCrouching = true;
+		Crouch();
+	}
 }
 
 void AHOMEWORK3Character::TurnAtRate(float Rate)
