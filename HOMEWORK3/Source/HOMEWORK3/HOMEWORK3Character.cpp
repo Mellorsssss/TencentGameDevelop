@@ -78,8 +78,8 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	PlayerInputComponent->BindAxis("LookUpRate", this, &AHOMEWORK3Character::LookUpAtRate);
 
 	// handle touch devices
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &AHOMEWORK3Character::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &AHOMEWORK3Character::TouchStopped);
+	/*PlayerInputComponent->BindTouch(IE_Pressed, this, &AHOMEWORK3Character::TouchStarted);
+	PlayerInputComponent->BindTouch(IE_Released, this, &AHOMEWORK3Character::TouchStopped);*/
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AHOMEWORK3Character::OnResetVR);
