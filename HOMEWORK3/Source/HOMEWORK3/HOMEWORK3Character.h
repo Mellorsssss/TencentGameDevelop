@@ -21,7 +21,11 @@ class AHOMEWORK3Character : public ACharacter
 public:
 	AHOMEWORK3Character();
 
+
 	virtual FVector GetPawnViewLocation() const override;
+
+	UFUNCTION(BlueprintCallable, Category = "Targeting")
+	FRotator GetAimOffsets() const;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
@@ -34,7 +38,20 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Player")
 	bool bCrouching;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
+	bool bEnableZoom;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+		float CustomFOV;
+
+	float DefaultFOV;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1, ClampMax = 100.0))
+		float ZoomSpeed;
 protected:
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
@@ -69,11 +86,23 @@ protected:
 	void EndCrouch();
 
 	void TouchCrouch();
+
+	void UseControllerRotationYaw();
+
+	void UnUseControllerRotationYaw();
+
+	void BeginZoom();
+
+	void EndZoom();
+
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
 
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }

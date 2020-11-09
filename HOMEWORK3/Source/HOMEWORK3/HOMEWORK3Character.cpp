@@ -23,7 +23,7 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
@@ -46,6 +46,10 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 	bCrouching = false;
+
+	bEnableZoom = false;
+	CustomFOV = 65.0f;
+	ZoomSpeed = 20.0;
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -54,6 +58,14 @@ FVector AHOMEWORK3Character::GetPawnViewLocation() const
 		return FollowCamera->GetComponentLocation();
 	}
 	return Super::GetPawnViewLocation();
+}
+
+FRotator AHOMEWORK3Character::GetAimOffsets() const
+{
+	const FVector AimWorldSpace = GetBaseAimRotation().Vector();
+	const FVector AimLocalSpace = ActorToWorld().InverseTransformVectorNoScale(AimWorldSpace);
+	const FRotator AimRotationLocalSpace = AimLocalSpace.Rotation();
+	return AimRotationLocalSpace;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -87,8 +99,29 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	// crouch handle
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AHOMEWORK3Character::TouchCrouch);
 	//PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AHOMEWORK3Character::EndCrouch);
+
+	// 当按下Alt键时，可以自由观察角色当前的状态
+	PlayerInputComponent->BindAction("UseControllerYaw", IE_Pressed, this, &AHOMEWORK3Character::UnUseControllerRotationYaw);
+	PlayerInputComponent->BindAction("UseControllerYaw", IE_Released, this, &AHOMEWORK3Character::UseControllerRotationYaw);
+	
+	PlayerInputComponent->BindAction("Zoom", IE_Pressed, this, &AHOMEWORK3Character::BeginZoom);
+	PlayerInputComponent->BindAction("Zoom", IE_Released, this, &AHOMEWORK3Character::EndZoom);
 }
 
+void AHOMEWORK3Character::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	float TargetFOV = bEnableZoom ? CustomFOV : DefaultFOV;
+	float CurrentFOV = FMath::FInterpTo(FollowCamera->FieldOfView, TargetFOV, DeltaTime, ZoomSpeed);
+	FollowCamera->SetFieldOfView(CurrentFOV);
+}
+
+void AHOMEWORK3Character::BeginPlay()
+{
+	Super::BeginPlay();
+	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
+}
 
 void AHOMEWORK3Character::OnResetVR()
 {
@@ -125,6 +158,26 @@ void AHOMEWORK3Character::TouchCrouch()
 		bCrouching = true;
 		Crouch();
 	}
+}
+
+void AHOMEWORK3Character::UseControllerRotationYaw()
+{
+	bUseControllerRotationYaw = true;
+}
+
+void AHOMEWORK3Character::UnUseControllerRotationYaw()
+{
+	bUseControllerRotationYaw = false;
+}
+
+void AHOMEWORK3Character::BeginZoom()
+{
+	bEnableZoom = true;
+}
+
+void AHOMEWORK3Character::EndZoom()
+{
+	bEnableZoom = false;
 }
 
 void AHOMEWORK3Character::TurnAtRate(float Rate)
