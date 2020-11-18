@@ -45,3 +45,21 @@
   链接：https://pan.baidu.com/s/1rPXd9yrYdhvLlPOBoSaZ9A
 
   提取码：e87c
+
+
+
+#### 4. 第四次课后作业
+
+- 介绍：在上一次项目的基础上，添加了角色的动画：
+
+  - 基本的`Idle`、`Jog`、`Crouch`、`Jump`；
+  - 俯仰，并且可以在俯仰时正常射击；
+  - 瞄准动画；
+  - 拳击动画；
+  - 按下`alt`以自由视角浏览角色；
+  - 弹道动画
+
+- 网盘链接：
+
+  链接：https://pan.baidu.com/s/1ifLrmnWRoRApkLSeCdtKxA 
+  提取码：e5r9 
