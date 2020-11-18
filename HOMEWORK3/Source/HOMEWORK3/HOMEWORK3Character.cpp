@@ -50,6 +50,9 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	bEnableZoom = false;
 	CustomFOV = 65.0f;
 	ZoomSpeed = 20.0;
+
+	bFiring = false;
+	bPunching = false;
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -106,6 +109,12 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	
 	PlayerInputComponent->BindAction("Zoom", IE_Pressed, this, &AHOMEWORK3Character::BeginZoom);
 	PlayerInputComponent->BindAction("Zoom", IE_Released, this, &AHOMEWORK3Character::EndZoom);
+
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AHOMEWORK3Character::BeginFire);
+	PlayerInputComponent->BindAction("Fire", IE_Released, this, &AHOMEWORK3Character::EndFire);
+
+	PlayerInputComponent->BindAction("Punch", IE_Pressed, this, &AHOMEWORK3Character::BeginPunch);
+	PlayerInputComponent->BindAction("Punch", IE_Released, this, &AHOMEWORK3Character::EndPunch);
 }
 
 void AHOMEWORK3Character::Tick(float DeltaTime)
@@ -121,6 +130,7 @@ void AHOMEWORK3Character::BeginPlay()
 {
 	Super::BeginPlay();
 	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
+	BulletNum = 100;
 }
 
 void AHOMEWORK3Character::OnResetVR()
@@ -178,6 +188,32 @@ void AHOMEWORK3Character::BeginZoom()
 void AHOMEWORK3Character::EndZoom()
 {
 	bEnableZoom = false;
+}
+
+void AHOMEWORK3Character::BeginFire()
+{
+	if (BulletNum > 0) {
+		--BulletNum;
+		bFiring = true;
+	}
+}
+
+void AHOMEWORK3Character::EndFire() {
+	bFiring = false;
+}
+
+void AHOMEWORK3Character::BeginPunch()
+{
+	if (!bPunching) {
+		bPunching = true;
+	}
+}
+
+void AHOMEWORK3Character::EndPunch()
+{
+	if (bPunching) {
+		bPunching = false;
+	}
 }
 
 void AHOMEWORK3Character::TurnAtRate(float Rate)

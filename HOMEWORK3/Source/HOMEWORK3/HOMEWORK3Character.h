@@ -48,6 +48,16 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1, ClampMax = 100.0))
 		float ZoomSpeed;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Player")
+	bool bFiring;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	bool bPunching;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite , Category = "Player")
+	int BulletNum;
+
 protected:
 
 	// Called when the game starts or when spawned
@@ -95,7 +105,15 @@ protected:
 
 	void EndZoom();
 
-	
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void BeginFire();
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void EndFire();
+
+	void BeginPunch();
+
+	void EndPunch();
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

@@ -4,6 +4,7 @@
 #include "TPSWeapon.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ATPSWeapon::ATPSWeapon()
@@ -16,6 +17,7 @@ ATPSWeapon::ATPSWeapon()
 
 	ShootRange = 10000.0;
 	MuzzleSocketName = "Muzzle";
+	TraceSocketName = "Target";
 }
 
 // Called when the game starts or when spawned
@@ -31,7 +33,7 @@ void ATPSWeapon::Fire()
 	if (WeaponOwner) {
 		FVector EyeLocation;
 		FRotator EyeRotation;
-		WeaponOwner->GetActorEyesViewPoint(EyeLocation,EyeRotation);
+		WeaponOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
 
 		FVector TraceBegin = EyeLocation,
 			TraceEnd = EyeLocation + (EyeRotation.Vector() * ShootRange);
@@ -50,18 +52,31 @@ void ATPSWeapon::Fire()
 				UGameplayStatics::ApplyPointDamage(HitedActor, 40.0, EyeRotation.Vector(), HitResult, WeaponOwner->GetInstigatorController(), this, DamageType);
 			}
 
+			TraceEnd = HitResult.ImpactPoint;
+
+			// 设置击中特效
 			if (ImpactEffect) {
-				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, HitResult.Location, HitResult.ImpactNormal.Rotation());
+				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, TraceEnd, HitResult.ImpactNormal.Rotation());
 			}
+
+
 		}
 
 		if (MuzzleEffect) {
 			UGameplayStatics::SpawnEmitterAttached(MuzzleEffect, MeshComp, MuzzleSocketName);
 		}
 
-		
+		// 设置弹道轨迹
+		if (TracerEffect) {
+			FVector MuzzleLocation = MeshComp->GetSocketLocation(MuzzleSocketName);
+			UParticleSystemComponent* TraceComp = UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), TracerEffect, MuzzleLocation);
+			if (TraceComp) {
+				TraceComp->SetVectorParameter(TraceSocketName, TraceEnd);// 设置目的点为击中的位置
+			}
+		}
 	}
 }
+
 
 // Called every frame
 void ATPSWeapon::Tick(float DeltaTime)
