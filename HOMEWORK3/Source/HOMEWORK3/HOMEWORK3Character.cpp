@@ -130,7 +130,7 @@ void AHOMEWORK3Character::BeginPlay()
 {
 	Super::BeginPlay();
 	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
-	BulletNum = 100;
+	BulletNum = 20;
 }
 
 void AHOMEWORK3Character::OnResetVR()
