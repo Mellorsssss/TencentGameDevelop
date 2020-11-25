@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "TPS_PickUpActor.h"
 #include "HOMEWORK3Character.generated.h"
+
+class ATPSWeapon;
 
 UCLASS(config=Game)
 class AHOMEWORK3Character : public ACharacter
@@ -24,8 +27,12 @@ public:
 
 	virtual FVector GetPawnViewLocation() const override;
 
-	UFUNCTION(BlueprintCallable, Category = "Targeting")
+	UFUNCTION(BlueprintCallable, Category = "Player")
 	FRotator GetAimOffsets() const;
+
+	// 用于给武器类调用
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void AddWeapon(ATPSWeapon* NewWeapon);
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
@@ -42,12 +49,15 @@ public:
 	bool bEnableZoom;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Player")
-		float CustomFOV;
+	float CustomFOV;
 
 	float DefaultFOV;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1, ClampMax = 100.0))
-		float ZoomSpeed;
+	float ZoomSpeed;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1, ClampMax = 100.0))
+	float ViewRange;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Player")
 	bool bFiring;
@@ -55,9 +65,31 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	bool bPunching;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	bool bTargeting;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite , Category = "Player")
 	int BulletNum;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
+	bool bHasWeapon;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	USceneComponent* HoldingComponent;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
+	TSubclassOf<ATPSWeapon> WeaponClasss;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	ATPSWeapon* CurrentWeapon;
+	
+	// 当前注视的物品
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	ATPS_PickUpActor* CurrentFocusItem;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
+	FName WeaponSocketName;
+	
 protected:
 
 	// Called when the game starts or when spawned
@@ -114,6 +146,16 @@ protected:
 	void BeginPunch();
 
 	void EndPunch();
+
+	void StartAim();
+
+	void EndAim();
+
+	ATPS_PickUpActor* GetFocusItem();
+
+	void PickUp();
+
+	// void RemoveWeapon();
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -126,5 +168,7 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+
 };
 

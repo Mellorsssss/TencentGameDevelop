@@ -7,6 +7,7 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
+#include "TPSWeapon.h"
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -50,9 +51,12 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	bEnableZoom = false;
 	CustomFOV = 65.0f;
 	ZoomSpeed = 20.0;
+	ViewRange = 1000.f;
 
 	bFiring = false;
 	bPunching = false;
+
+	WeaponSocketName = "WeaponSocket";
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -115,6 +119,11 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 
 	PlayerInputComponent->BindAction("Punch", IE_Pressed, this, &AHOMEWORK3Character::BeginPunch);
 	PlayerInputComponent->BindAction("Punch", IE_Released, this, &AHOMEWORK3Character::EndPunch);
+
+	PlayerInputComponent->BindAction("Target", IE_Pressed, this, &AHOMEWORK3Character::StartAim);
+	PlayerInputComponent->BindAction("Target", IE_Released, this, &AHOMEWORK3Character::EndAim);
+
+	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AHOMEWORK3Character::PickUp);
 }
 
 void AHOMEWORK3Character::Tick(float DeltaTime)
@@ -124,6 +133,16 @@ void AHOMEWORK3Character::Tick(float DeltaTime)
 	float TargetFOV = bEnableZoom ? CustomFOV : DefaultFOV;
 	float CurrentFOV = FMath::FInterpTo(FollowCamera->FieldOfView, TargetFOV, DeltaTime, ZoomSpeed);
 	FollowCamera->SetFieldOfView(CurrentFOV);
+
+	// TODO： 优化以下的拳击逻辑，在Tick中过于消耗性能
+	if (bPunching) {
+		CurrentWeapon->MeshComp->SetVisibility(false);
+	}
+	else {
+		CurrentWeapon->MeshComp->SetVisibility(true);
+	}
+
+	CurrentFocusItem = GetFocusItem();// 获取当前注视的物体
 }
 
 void AHOMEWORK3Character::BeginPlay()
@@ -131,6 +150,14 @@ void AHOMEWORK3Character::BeginPlay()
 	Super::BeginPlay();
 	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
 	BulletNum = 20;
+
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	CurrentWeapon = GetWorld()->SpawnActor<ATPSWeapon>(WeaponClasss, FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+	
+	CurrentWeapon->SetOwner(this);
+	CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
+	UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
 }
 
 void AHOMEWORK3Character::OnResetVR()
@@ -214,6 +241,77 @@ void AHOMEWORK3Character::EndPunch()
 	if (bPunching) {
 		bPunching = false;
 	}
+}
+
+void AHOMEWORK3Character::StartAim()
+{
+	if (!bTargeting) {
+		bTargeting = true;
+	}
+}
+
+void AHOMEWORK3Character::EndAim()
+{
+	if (bTargeting) {
+		bTargeting = false;
+	}
+}
+
+ATPS_PickUpActor* AHOMEWORK3Character::GetFocusItem()
+{
+	FVector EyeLocation;
+	FRotator EyeRotation;
+	GetActorEyesViewPoint(EyeLocation, EyeRotation);
+
+	FVector TraceBegin = EyeLocation;
+	FVector	TraceEnd = EyeLocation + (EyeRotation.Vector() * ViewRange);
+
+	FCollisionQueryParams CollisionQueryParams;
+	CollisionQueryParams.AddIgnoredActor(this);
+	CollisionQueryParams.bTraceComplex = true; // 碰撞精准到Triangle Mesh
+
+	FHitResult HitResult;// 存储碰撞的结果
+	
+	GetWorld()->LineTraceSingleByChannel(HitResult, TraceBegin, TraceEnd, ECC_Visibility, CollisionQueryParams);
+
+	ATPS_PickUpActor* PickUpItem = Cast<ATPS_PickUpActor>(HitResult.GetActor());
+	if (PickUpItem) {
+		UE_LOG(LogTemp, Log, TEXT("Focus on an object!"));
+	}
+	return PickUpItem;
+}
+
+void AHOMEWORK3Character::PickUp()
+{
+
+	if (CurrentFocusItem) {
+		UE_LOG(LogTemp, Log, TEXT("PickUp the item success"));
+		bHasWeapon = true;
+		CurrentFocusItem->Pickup(this);
+
+		if (!bHasWeapon) {
+			CurrentFocusItem = nullptr;
+		}
+	}
+	else {
+		UE_LOG(LogTemp, Log, TEXT("PickUp item failure!"));
+	}
+}
+
+void AHOMEWORK3Character::AddWeapon(ATPSWeapon* NewWeapon)
+{
+	if (NewWeapon == CurrentWeapon)return;
+
+	if (NewWeapon) {
+		if (CurrentWeapon) {
+			CurrentWeapon->Destroy();
+		}
+
+		CurrentWeapon = NewWeapon;
+		CurrentWeapon->SetOwner(this);
+		CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
+	}
+
 }
 
 void AHOMEWORK3Character::TurnAtRate(float Rate)
