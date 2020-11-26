@@ -7,6 +7,7 @@
 #include "PhysicsEngine\RadialForceComponent.h"
 #include "Particles\ParticleSystem.h"
 #include "Kismet/GameplayStatics.h"
+#include "PhysicalMaterials//PhysicalMaterial.h"
 
 // Sets default values
 ATPS_GrenadeProjectile::ATPS_GrenadeProjectile()
@@ -39,6 +40,8 @@ void ATPS_GrenadeProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector CurrentV = GetVelocity();
+	UE_LOG(LogTemp, Log, TEXT("Current speed is %f."), CurrentV.Size());
 	if (IsToExplode()) {
 		Explode(MeshComp->GetComponentLocation());
 	}
@@ -46,7 +49,18 @@ void ATPS_GrenadeProjectile::Tick(float DeltaTime)
 
 void ATPS_GrenadeProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	Explode(Hit.ImpactPoint);
+	//TODO :首先获取材质
+	EPhysicalSurface HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
+	if (IsHitTarget(HitSurfaceType)) {
+		Explode(Hit.ImpactPoint);
+	}
+	else if (HitSurfaceType == NULL) {
+		UE_LOG(LogTemp, Log, TEXT("No surface type!"));
+	}
+	else {
+		;
+	}
+	
 }
 
 void ATPS_GrenadeProjectile::Shoot()
@@ -68,4 +82,25 @@ bool ATPS_GrenadeProjectile::IsToExplode() const
 	if (CurrentVelocity <= 0.1f) // 冲量还没有作用
 		return false;
 	return CurrentVelocity <= SpeedThreshold;
+}
+
+void ATPS_GrenadeProjectile::SlowDown(EPhysicalSurface HitSurfaceType)
+{
+	float DecayFactor = 1.0f;
+	switch (HitSurfaceType)
+	{
+	case SURFACETYPE_DEFAULT:
+		DecayFactor = 0.5f;
+	case SURFACETYPE_FLESHDEFAULT:
+	case SURFACETYPE_FLESHHEAD:
+		break;
+	case SurfaceType3:
+		break;
+	default:
+		break;
+	}
+	FVector CurrentVelocity = GetVelocity();
+	CurrentVelocity *= DecayFactor;
+
+	MeshComp->SetAllPhysicsLinearVelocity(CurrentVelocity);
 }

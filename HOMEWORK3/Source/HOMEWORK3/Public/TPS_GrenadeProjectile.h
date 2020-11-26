@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "../HOMEWORK3.h"
 #include "GameFramework/Actor.h"
 #include "TPS_GrenadeProjectile.generated.h"
 
@@ -30,6 +31,12 @@ protected:
 	void Explode(FVector ExplodeLocation);
 	
 	bool IsToExplode() const;
+
+	void SlowDown(EPhysicalSurface HitSurfaceType);
+
+	FORCEINLINE bool IsHitTarget(EPhysicalSurface HitSurfaceType)const {
+		return HitSurfaceType == SURFACETYPE_FLESHDEFAULT || HitSurfaceType == SURFACETYPE_FLESHHEAD;
+	};
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
