@@ -108,7 +108,7 @@ void ATPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd
 		break;
 	case SURFACETYPE_FLESHDEFAULT:
 		SelectedEffect = FleshDefaultImpactEffect;
-		SelectSound = DefaultSound;
+		SelectSound = HitBodySound;
 		break;
 	case SURFACETYPE_FLESHHEAD:
 		SelectedEffect = FleshHeadImpactEffect;

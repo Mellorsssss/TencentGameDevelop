@@ -51,6 +51,9 @@ public:
 	UParticleSystem* ImpactEffect;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Projectile")
+	USoundBase* ExplodeSound;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Projectile")
 	float InitImpulse;
 
 	// Åö×²ÊÂ¼þ
@@ -59,5 +62,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Projectile")
 	float SpeedThreshold;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Projectile")
+	float ImpulseStrength;
 
 };

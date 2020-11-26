@@ -57,6 +57,8 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	bPunching = false;
 
 	WeaponSocketName = "WeaponSocket";
+
+	TotalBulletNum = 50;
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -97,8 +99,8 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	PlayerInputComponent->BindAxis("LookUpRate", this, &AHOMEWORK3Character::LookUpAtRate);
 
 	// handle touch devices
-	/*PlayerInputComponent->BindTouch(IE_Pressed, this, &AHOMEWORK3Character::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &AHOMEWORK3Character::TouchStopped);*/
+	PlayerInputComponent->BindTouch(IE_Pressed, this, &AHOMEWORK3Character::TouchStarted);
+	//PlayerInputComponent->BindTouch(IE_Released, this, &AHOMEWORK3Character::TouchStopped);*/
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AHOMEWORK3Character::OnResetVR);
@@ -149,7 +151,7 @@ void AHOMEWORK3Character::BeginPlay()
 {
 	Super::BeginPlay();
 	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
-	BulletNum = 20;
+	BulletNum = TotalBulletNum;
 
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -167,7 +169,7 @@ void AHOMEWORK3Character::OnResetVR()
 
 void AHOMEWORK3Character::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		Jump();
+	PickUp();
 }
 
 void AHOMEWORK3Character::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
@@ -277,6 +279,12 @@ ATPS_PickUpActor* AHOMEWORK3Character::GetFocusItem()
 	ATPS_PickUpActor* PickUpItem = Cast<ATPS_PickUpActor>(HitResult.GetActor());
 	if (PickUpItem) {
 		UE_LOG(LogTemp, Log, TEXT("Focus on an object!"));
+		BeginZoom();
+		bFocusing = true;
+	}
+	else if (bFocusing) {
+		bFocusing = false;
+		EndZoom();
 	}
 	return PickUpItem;
 }
@@ -286,12 +294,7 @@ void AHOMEWORK3Character::PickUp()
 
 	if (CurrentFocusItem) {
 		UE_LOG(LogTemp, Log, TEXT("PickUp the item success"));
-		bHasWeapon = true;
 		CurrentFocusItem->Pickup(this);
-
-		if (!bHasWeapon) {
-			CurrentFocusItem = nullptr;
-		}
 	}
 	else {
 		UE_LOG(LogTemp, Log, TEXT("PickUp item failure!"));

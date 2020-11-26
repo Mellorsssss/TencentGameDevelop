@@ -19,9 +19,10 @@ ATPS_GrenadeProjectile::ATPS_GrenadeProjectile()
 	RootComponent = MeshComp;
 
 	InitImpulse = 1000.f;
+	ImpulseStrength = 2000.f;
 	RadialForceComp = CreateDefaultSubobject<URadialForceComponent>(TEXT("RadialForceComp"));
 	RadialForceComp->SetAutoActivate(false);
-	RadialForceComp->ImpulseStrength = 2000.f;
+	RadialForceComp->ImpulseStrength = ImpulseStrength;
 	RadialForceComp->AttachTo(RootComponent);
 
 	SpeedThreshold = 1000.f;
@@ -41,7 +42,7 @@ void ATPS_GrenadeProjectile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	FVector CurrentV = GetVelocity();
-	UE_LOG(LogTemp, Log, TEXT("Current speed is %f."), CurrentV.Size());
+	//UE_LOG(LogTemp, Log, TEXT("Current speed is %f."), CurrentV.Size());
 	if (IsToExplode()) {
 		Explode(MeshComp->GetComponentLocation());
 	}
@@ -52,13 +53,12 @@ void ATPS_GrenadeProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* Ot
 	//TODO :首先获取材质
 	EPhysicalSurface HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
 	if (IsHitTarget(HitSurfaceType)) {
+		UE_LOG(LogTemp, Log, TEXT("It's time to blow!!!"));
 		Explode(Hit.ImpactPoint);
 	}
-	else if (HitSurfaceType == NULL) {
-		UE_LOG(LogTemp, Log, TEXT("No surface type!"));
-	}
 	else {
-		;
+		UE_LOG(LogTemp, Log, TEXT("Get the type!"));
+		SlowDown(HitSurfaceType);
 	}
 	
 }
@@ -72,6 +72,7 @@ void ATPS_GrenadeProjectile::Shoot()
 void ATPS_GrenadeProjectile::Explode(FVector ExplodeLocation)
 {
 	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, ExplodeLocation);
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ExplodeSound, ExplodeLocation);
 	RadialForceComp->FireImpulse();
 	Destroy();
 }
@@ -90,17 +91,22 @@ void ATPS_GrenadeProjectile::SlowDown(EPhysicalSurface HitSurfaceType)
 	switch (HitSurfaceType)
 	{
 	case SURFACETYPE_DEFAULT:
-		DecayFactor = 0.5f;
 	case SURFACETYPE_FLESHDEFAULT:
 	case SURFACETYPE_FLESHHEAD:
 		break;
-	case SurfaceType3:
+	case SURFACETYPE_GRASS:
+		DecayFactor = 0.3f;
 		break;
+	case SURFACETYPE_IRON:
+		DecayFactor = 1.0f;
+		break;
+	case SURFACETYPE_SOIL:
+		DecayFactor = 0.5f;
 	default:
 		break;
 	}
 	FVector CurrentVelocity = GetVelocity();
 	CurrentVelocity *= DecayFactor;
-
+	UE_LOG(LogTemp, Log, TEXT("The factor is %f"), DecayFactor);
 	MeshComp->SetAllPhysicsLinearVelocity(CurrentVelocity);
 }

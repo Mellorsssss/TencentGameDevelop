@@ -72,7 +72,10 @@ public:
 	int BulletNum;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
-	bool bHasWeapon;
+	int TotalBulletNum;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
+	bool bFocusing;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	USceneComponent* HoldingComponent;
