@@ -60,11 +60,12 @@ void ATPSWeapon::Fire()
 		EPhysicalSurface HitSurfaceType = SURFACETYPE_DEFAULT;
 
 		float ActualDamge = BaseDamage;
-		if (GetWorld()->LineTraceSingleByChannel(HitResult, TraceBegin, TraceEnd, ECC_Visibility, CollisionQueryParams)) {
+		if (GetWorld()->LineTraceSingleByChannel(HitResult, TraceBegin, TraceEnd, ECC_GameTraceChannel1, CollisionQueryParams)) {
 			HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(HitResult.PhysMaterial.Get());
 			
-			if (HitSurfaceType == SURFACETYPE_DEFAULT) {
-				ActualDamge *= 1.5;
+			if (HitSurfaceType == SURFACETYPE_FLESHHEAD) {
+				UE_LOG(LogTemp, Log, TEXT("Hit the head!!!"));
+				ActualDamge *= 2.0;
 			}
 
 			ApplyDamage(HitResult.GetActor(),ActualDamge, EyeRotation.Vector(), HitResult, WeaponOwner->GetInstigatorController());
@@ -114,6 +115,7 @@ void ATPSWeapon::PlayFireEffect(FVector TraceEnd)
 
 void ATPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd)
 {
+	UE_LOG (LogTemp, Log, TEXT("Play the effect"));
 	// 根据命中的物理材质不同，选择不同的粒子系统
 	UParticleSystem* SelectedEffect = nullptr;
 	USoundBase* SelectSound = nullptr;

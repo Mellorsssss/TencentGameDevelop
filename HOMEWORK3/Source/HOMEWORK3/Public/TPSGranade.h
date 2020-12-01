@@ -5,10 +5,6 @@
 #include "CoreMinimal.h"
 #include "TPSWeapon.h"
 #include "TPSGranade.generated.h"
-
-/**
- * 
- */
 UCLASS()
 class HOMEWORK3_API ATPSGranade : public ATPSWeapon
 {
@@ -18,4 +14,7 @@ public:
 		TSubclassOf<AActor> ProjectileClass;
 protected:
 	virtual void Fire() override;
+
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerShoot();
 };

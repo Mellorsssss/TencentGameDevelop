@@ -10,6 +10,8 @@
 #include "TPSWeapon.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AHOMEWORK3Character
@@ -45,6 +47,10 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+
+	// 初始化生命值组件 
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 	bCrouching = false;
@@ -56,11 +62,43 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 
 	bFiring = false;
 	bPunching = false;
+	bDied = false;
 
 	WeaponSocketName = "WeaponSocket";
 
 	TotalBulletNum = 50;
 	//CurrentWeapon = nullptr;
+}
+
+void AHOMEWORK3Character::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	float TargetFOV = bEnableZoom ? CustomFOV : DefaultFOV;
+	float CurrentFOV = FMath::FInterpTo(FollowCamera->FieldOfView, TargetFOV, DeltaTime, ZoomSpeed);
+	FollowCamera->SetFieldOfView(CurrentFOV);
+
+	CurrentFocusItem = GetFocusItem();// 获取当前注视的物体
+}
+
+void AHOMEWORK3Character::BeginPlay()
+{
+	Super::BeginPlay();
+	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
+	BulletNum = TotalBulletNum;
+	HealthComponent->OnHealthChanged.AddDynamic(this, &AHOMEWORK3Character::OnHealthChangeHandler);
+
+	if (HasAuthority()) {
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		CurrentWeapon = GetWorld()->SpawnActor<ATPSWeapon>(WeaponClasss, FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+
+		if (CurrentWeapon) {
+			CurrentWeapon->SetOwner(this);
+			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
+			UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
+		}
+	}
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -128,46 +166,8 @@ void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* Playe
 	PlayerInputComponent->BindAction("Target", IE_Released, this, &AHOMEWORK3Character::EndAim);
 
 	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &AHOMEWORK3Character::PickUp);
-}
 
-void AHOMEWORK3Character::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-	float TargetFOV = bEnableZoom ? CustomFOV : DefaultFOV;
-	float CurrentFOV = FMath::FInterpTo(FollowCamera->FieldOfView, TargetFOV, DeltaTime, ZoomSpeed);
-	FollowCamera->SetFieldOfView(CurrentFOV);
-
-	// TODO： 优化以下的拳击逻辑，在Tick中过于消耗性能
-	/*if (CurrentWeapon) {
-		if (bPunching) {
-			CurrentWeapon->MeshComp->SetVisibility(false);
-		}
-		else {
-			CurrentWeapon->MeshComp->SetVisibility(true);
-		}
-	}*/
-
-	CurrentFocusItem = GetFocusItem();// 获取当前注视的物体
-}
-
-void AHOMEWORK3Character::BeginPlay()
-{
-	Super::BeginPlay();
-	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
-	BulletNum = TotalBulletNum;
-
-	if (HasAuthority()) {
-		FActorSpawnParameters SpawnParams;
-		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-		CurrentWeapon = GetWorld()->SpawnActor<ATPSWeapon>(WeaponClasss, FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
-
-		if (CurrentWeapon) {
-			CurrentWeapon->SetOwner(this);
-			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
-			UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
-		}
-	}
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &AHOMEWORK3Character::Reload);
 }
 
 void AHOMEWORK3Character::OnResetVR()
@@ -232,6 +232,7 @@ void AHOMEWORK3Character::BeginFire()
 	if (BulletNum > 0) {
 		--BulletNum;
 		bFiring = true;
+		OnBulletNumChange(BulletNum, -1);
 	}
 }
 
@@ -309,6 +310,14 @@ void AHOMEWORK3Character::PickUp()
 	}
 }
 
+void AHOMEWORK3Character::Reload()
+{
+	int BulletNumDelta = TotalBulletNum - BulletNum;
+	BulletNum = TotalBulletNum;
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(),PickUpSound, GetActorLocation());
+	OnBulletNumChange(BulletNum, BulletNumDelta);
+}
+
 void AHOMEWORK3Character::AddWeapon(ATPSWeapon* NewWeapon)
 {
 	if (NewWeapon == CurrentWeapon) {
@@ -373,4 +382,16 @@ void AHOMEWORK3Character::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(AHOMEWORK3Character, CurrentWeapon);
+}
+
+void AHOMEWORK3Character::OnHealthChangeHandler(UHealthComponent* HealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
+{
+	if (!bDied && Health <= 0.f) {
+		bDied = true;
+		UE_LOG (LogTemp, Log, TEXT("The player is dead!"));
+		GetMovementComponent()->StopMovementImmediately();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		DetachFromControllerPendingDestroy();
+		SetLifeSpan(10.0f);
+	}
 }

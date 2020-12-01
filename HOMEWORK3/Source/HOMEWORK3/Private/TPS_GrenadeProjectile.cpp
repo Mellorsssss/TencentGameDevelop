@@ -17,7 +17,6 @@ ATPS_GrenadeProjectile::ATPS_GrenadeProjectile()
 
 	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 	RootComponent = MeshComp;
-
 	InitImpulse = 1000.f;
 	ImpulseStrength = 2000.f;
 	RadialForceComp = CreateDefaultSubobject<URadialForceComponent>(TEXT("RadialForceComp"));
@@ -28,7 +27,7 @@ ATPS_GrenadeProjectile::ATPS_GrenadeProjectile()
 	SpeedThreshold = 1000.f;
 	DamageType = UDamageType::StaticClass();
 	Damage = 100.f;
-	DamageRadius = 100.f;
+	DamageRadius = 1000.f;
 	
 
 	SetReplicates(true);
@@ -62,12 +61,18 @@ void ATPS_GrenadeProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* Ot
 	//TODO :首先获取材质
 	EPhysicalSurface HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
 	if (IsHitTarget(HitSurfaceType)) {
+		//UGameplayStatics::ApplyDamage(OtherActor, Damage, nullptr, this, DamageType);
 		Explode(Hit.ImpactPoint);
 	}
 	else {
 		SlowDown(HitSurfaceType);
 	}
 	
+}
+
+void ATPS_GrenadeProjectile::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
 void ATPS_GrenadeProjectile::Shoot()
@@ -87,7 +92,10 @@ bool ATPS_GrenadeProjectile::IsToExplode() const
 void ATPS_GrenadeProjectile::Explode(FVector ExplodeLocation)
 {
 	TArray<AActor*> IgnoreActors;
-	UGameplayStatics::ApplyRadialDamage(GetWorld(), Damage, ExplodeLocation, DamageRadius, DamageType,IgnoreActors);
+	IgnoreActors.Add(this);
+	if(UGameplayStatics::ApplyRadialDamage(this, Damage, ExplodeLocation, DamageRadius, DamageType, IgnoreActors, this, GetOwner()->GetInstigatorController(), true)){
+		UE_LOG(LogTemp, Log, TEXT("apply the damage!"));
+	}
 	Destroy();
 }
 
@@ -113,7 +121,6 @@ void ATPS_GrenadeProjectile::SlowDown(EPhysicalSurface HitSurfaceType)
 	}
 	FVector CurrentVelocity = GetVelocity();
 	CurrentVelocity *= DecayFactor;
-	UE_LOG(LogTemp, Log, TEXT("The factor is %f"), DecayFactor);
 	MeshComp->SetAllPhysicsLinearVelocity(CurrentVelocity);
 }
 

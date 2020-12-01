@@ -8,6 +8,9 @@
 #include "HOMEWORK3Character.generated.h"
 
 class ATPSWeapon;
+class UHealthComponent;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBulletNumChange, int, BulletNum, int, BulletNumDelta);
 
 UCLASS(config=Game)
 class AHOMEWORK3Character : public ACharacter
@@ -80,6 +83,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	USceneComponent* HoldingComponent;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	UHealthComponent* HealthComponent;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
 	TSubclassOf<ATPSWeapon> WeaponClasss;
 
@@ -92,7 +98,12 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
 	FName WeaponSocketName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Sound")
+	USoundBase* PickUpSound;
 	
+	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	bool bDied;
 protected:
 
 	// Called when the game starts or when spawned
@@ -158,10 +169,15 @@ protected:
 
 	void PickUp();
 
+	void Reload();
+
 	// void RemoveWeapon();
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-protected:
+
+	UFUNCTION()
+	void OnHealthChangeHandler(UHealthComponent* HealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
@@ -174,6 +190,11 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
+	UPROPERTY(BlueprintAssignable)
+	FBulletNumChange OnBulletNumChanged;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "EventTest")
+	void OnBulletNumChange(int CurrentBulletNum, int BulletNumDelta);
 
 };
 
