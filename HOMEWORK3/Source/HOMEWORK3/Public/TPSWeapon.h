@@ -10,12 +10,25 @@
 class UDamageType;
 class UParticleSystem;
 
+USTRUCT()
+struct FFireTraceStruct {
+	GENERATED_BODY()
+
+public:
+	UPROPERTY()
+	TEnumAsByte<EPhysicalSurface> SurfaceType;
+
+	UPROPERTY()
+	FVector_NetQuantize TraceEnd;
+
+};
+
 UCLASS()
 class HOMEWORK3_API ATPSWeapon : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:		
 	// Sets default values for this actor's properties
 	ATPSWeapon();
 
@@ -74,11 +87,20 @@ protected:
 	void PlayFireEffect(FVector TraceEnd);
 
 	void PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd);
+
+	//********* NetWork *******************//
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerFire();
+
+	UPROPERTY(ReplicatedUsing = OnRep_FireTrace)
+	FFireTraceStruct FireTraceResult;
+
+	UFUNCTION()
+	void OnRep_FireTrace();
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
+
 public:	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USkeletalMeshComponent* MeshComp;
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 };

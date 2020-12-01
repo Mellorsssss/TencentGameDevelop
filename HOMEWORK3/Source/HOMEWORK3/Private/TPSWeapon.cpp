@@ -7,6 +7,7 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicalMaterials//PhysicalMaterial.h"
 #include "../HOMEWORK3.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 ATPSWeapon::ATPSWeapon()
@@ -22,6 +23,9 @@ ATPSWeapon::ATPSWeapon()
 
 	MuzzleSocketName = "Muzzle";
 	TraceSocketName = "Target";
+
+	// 设置可以复制
+	SetReplicates(true);
 }
 
 // Called when the game starts or when spawned
@@ -33,6 +37,10 @@ void ATPSWeapon::BeginPlay()
 
 void ATPSWeapon::Fire()
 {
+	if (!HasAuthority()) {
+		ServerFire();
+	}
+
 	AActor* WeaponOwner = GetOwner();
 	if (WeaponOwner) {
 		FVector EyeLocation;
@@ -67,6 +75,14 @@ void ATPSWeapon::Fire()
 		}
 
 		PlayFireEffect(TraceEnd);
+
+		if (HasAuthority()) {
+			FireTraceResult.TraceEnd = TraceEnd;
+			FireTraceResult.SurfaceType = HitSurfaceType;
+			if (FireTraceResult.SurfaceType != SURFACETYPE_DEFAULT) {
+				UE_LOG(LogTemp, Log, TEXT("Server Transfer Surface Type!"));
+			}
+		}
 	}
 }
 
@@ -131,10 +147,27 @@ void ATPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd
 	}
 }
 
-// Called every frame
-void ATPSWeapon::Tick(float DeltaTime)
+void ATPSWeapon::ServerFire_Implementation()
 {
-	Super::Tick(DeltaTime);
+	UE_LOG(LogTemp, Log, TEXT("Fire on the server."));
+	Fire();
+}
 
+bool ATPSWeapon::ServerFire_Validate()
+{
+	return true;
+}
+
+void ATPSWeapon::OnRep_FireTrace()
+{
+	PlayFireEffect(FireTraceResult.TraceEnd);
+	PlayImpactEffect(FireTraceResult.SurfaceType, FireTraceResult.TraceEnd);
+}
+
+void ATPSWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME_CONDITION(ATPSWeapon, FireTraceResult, COND_SkipOwner);
 }
 

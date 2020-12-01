@@ -14,63 +14,21 @@ ATPS_PickUpActor::ATPS_PickUpActor()
 	MyMesh->SetSimulatePhysics(true);
 	RootComponent = MyMesh;
 
-	MyCharacter = nullptr;
 	bHolding = false;
 	bGravity = true;
 }
 
-// Called when the game starts or when spawned
-void ATPS_PickUpActor::BeginPlay()
-{
-	Super::BeginPlay();
-	
-	MyCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
-	PlayerCamera = MyCharacter->FindComponentByClass<UCameraComponent>();
-
-	TArray<USceneComponent*> Components;
-
-	MyCharacter->GetComponents(Components);
-
-	if (Components.Num() > 0)
-	{
-		for (auto& Comp : Components)
-		{
-			if (Comp->GetName() == "CurrentWeapon")
-			{
-				HoldingComp = Cast<USceneComponent>(Comp);
-			}
-		}
-	}
-}
-
-// Called every frame
-void ATPS_PickUpActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
-void ATPS_PickUpActor::RotateActor()
-{
-	ControlRotation = GetWorld()->GetFirstPlayerController()->GetControlRotation();
-	SetActorRotation(FQuat(ControlRotation));
-}
 
 void ATPS_PickUpActor::Pickup(APawn* InstigatorPawn)
 {
 	UE_LOG(LogTemp, Log, TEXT("Picking Up by the Actor"));
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), PickUpSound, MyMesh->GetComponentLocation());
 
-	bHolding = !bHolding;
+	/*bHolding = !bHolding;
 	bGravity = !bGravity;
 	MyMesh->SetEnableGravity(bGravity);
 	MyMesh->SetSimulatePhysics(bHolding ? false : true);
-	MyMesh->SetCollisionEnabled(bHolding ? ECollisionEnabled::NoCollision : ECollisionEnabled::QueryAndPhysics);
-
-	if (!bHolding)
-	{
-		ForwardVector = PlayerCamera->GetForwardVector();
-		MyMesh->AddForce(ForwardVector * 100000 * MyMesh->GetMass());
-	}
+	MyMesh->SetCollisionEnabled(bHolding ? ECollisionEnabled::NoCollision : ECollisionEnabled::QueryAndPhysics);*/
 }
 
 void ATPS_PickUpActor::OnFocus()

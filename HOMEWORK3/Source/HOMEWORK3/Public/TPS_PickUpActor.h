@@ -19,25 +19,14 @@ public:
 	// Sets default values for this actor's properties
 	ATPS_PickUpActor();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* MyMesh;
 
-	UPROPERTY(EditAnywhere)
-	USceneComponent* HoldingComp;
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
 	USoundBase* PickUpSound;
-
-	UFUNCTION()
-	void RotateActor();
 
 	UFUNCTION(BlueprintCallable, Category = "PickUp")
 	virtual void Pickup(APawn* InstigatorPawn);
@@ -48,12 +37,4 @@ public:
 	bool bHolding;
 
 	bool bGravity;
-
-	FRotator ControlRotation;
-
-	ACharacter* MyCharacter;
-
-	UCameraComponent* PlayerCamera;
-
-	FVector ForwardVector;
 };

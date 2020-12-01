@@ -83,7 +83,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
 	TSubclassOf<ATPSWeapon> WeaponClasss;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	UPROPERTY(Replicated,EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	ATPSWeapon* CurrentWeapon;
 	
 	// 当前注视的物品
@@ -159,6 +159,8 @@ protected:
 	void PickUp();
 
 	// void RemoveWeapon();
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

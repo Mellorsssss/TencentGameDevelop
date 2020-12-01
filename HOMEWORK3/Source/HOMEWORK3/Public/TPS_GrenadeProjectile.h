@@ -11,6 +11,7 @@ class USphereComponent;
 class UProjectileMovementComponent;
 class URadialForceComponent;
 class UParticleSystem;
+class UDamageType;
 
 UCLASS()
 class HOMEWORK3_API ATPS_GrenadeProjectile : public AActor
@@ -37,6 +38,8 @@ protected:
 	FORCEINLINE bool IsHitTarget(EPhysicalSurface HitSurfaceType)const {
 		return HitSurfaceType == SURFACETYPE_FLESHDEFAULT || HitSurfaceType == SURFACETYPE_FLESHHEAD;
 	};
+
+	virtual void Destroyed() override;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -55,6 +58,15 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Projectile")
 	float InitImpulse;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Damage")
+	float Damage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Damage")
+	float DamageRadius;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Damage")
+	TSubclassOf<UDamageType> DamageType;
 
 	// Åö×²ÊÂ¼þ
 	UFUNCTION()

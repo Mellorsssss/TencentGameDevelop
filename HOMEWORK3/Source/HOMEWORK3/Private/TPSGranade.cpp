@@ -16,7 +16,6 @@ void ATPSGranade::Fire()
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), ShootSound, MuzzleLocation);
 		FActorSpawnParameters SpawnParameters;
 		SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-		//GetWorld()->SpawnActor<AActor>(ProjectileClass, MuzzleLocation, EyeRotation.Vector());
 		GetWorld()->SpawnActor<AActor>(ProjectileClass, MuzzleLocation, EyeRotation, SpawnParameters);
 	}
 }

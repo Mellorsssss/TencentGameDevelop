@@ -26,13 +26,21 @@ ATPS_GrenadeProjectile::ATPS_GrenadeProjectile()
 	RadialForceComp->AttachTo(RootComponent);
 
 	SpeedThreshold = 1000.f;
+	DamageType = UDamageType::StaticClass();
+	Damage = 100.f;
+	DamageRadius = 100.f;
+	
+
+	SetReplicates(true);
 }
 
 // Called when the game starts or when spawned
 void ATPS_GrenadeProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	MeshComp->OnComponentHit.AddDynamic(this, &ATPS_GrenadeProjectile::OnHit);
+	if (HasAuthority()) {// 只有服务器可以处理榴弹击中事件
+		MeshComp->OnComponentHit.AddDynamic(this, &ATPS_GrenadeProjectile::OnHit);
+	}
 	Shoot();
 }
 
@@ -41,10 +49,11 @@ void ATPS_GrenadeProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector CurrentV = GetVelocity();
-	//UE_LOG(LogTemp, Log, TEXT("Current speed is %f."), CurrentV.Size());
-	if (IsToExplode()) {
-		Explode(MeshComp->GetComponentLocation());
+	if (HasAuthority()) {// 只有服务器出需要执行该逻辑
+		FVector CurrentV = GetVelocity();
+		if (IsToExplode()) {
+			Explode(MeshComp->GetComponentLocation());
+		}
 	}
 }
 
@@ -53,11 +62,9 @@ void ATPS_GrenadeProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* Ot
 	//TODO :首先获取材质
 	EPhysicalSurface HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
 	if (IsHitTarget(HitSurfaceType)) {
-		UE_LOG(LogTemp, Log, TEXT("It's time to blow!!!"));
 		Explode(Hit.ImpactPoint);
 	}
 	else {
-		UE_LOG(LogTemp, Log, TEXT("Get the type!"));
 		SlowDown(HitSurfaceType);
 	}
 	
@@ -69,20 +76,19 @@ void ATPS_GrenadeProjectile::Shoot()
 	MeshComp->AddImpulse(ProjectileRotator.Vector()*InitImpulse, NAME_None, true);
 }
 
-void ATPS_GrenadeProjectile::Explode(FVector ExplodeLocation)
-{
-	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, ExplodeLocation);
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ExplodeSound, ExplodeLocation);
-	RadialForceComp->FireImpulse();
-	Destroy();
-}
-
 bool ATPS_GrenadeProjectile::IsToExplode() const
 {
 	float CurrentVelocity = GetVelocity().Size();
 	if (CurrentVelocity <= 0.1f) // 冲量还没有作用
 		return false;
 	return CurrentVelocity <= SpeedThreshold;
+}
+
+void ATPS_GrenadeProjectile::Explode(FVector ExplodeLocation)
+{
+	TArray<AActor*> IgnoreActors;
+	UGameplayStatics::ApplyRadialDamage(GetWorld(), Damage, ExplodeLocation, DamageRadius, DamageType,IgnoreActors);
+	Destroy();
 }
 
 void ATPS_GrenadeProjectile::SlowDown(EPhysicalSurface HitSurfaceType)
@@ -109,4 +115,12 @@ void ATPS_GrenadeProjectile::SlowDown(EPhysicalSurface HitSurfaceType)
 	CurrentVelocity *= DecayFactor;
 	UE_LOG(LogTemp, Log, TEXT("The factor is %f"), DecayFactor);
 	MeshComp->SetAllPhysicsLinearVelocity(CurrentVelocity);
+}
+
+void ATPS_GrenadeProjectile::Destroyed()
+{
+	FVector ExplodeLocation = GetActorLocation();
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, ExplodeLocation);
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ExplodeSound, ExplodeLocation);
+	RadialForceComp->FireImpulse();
 }

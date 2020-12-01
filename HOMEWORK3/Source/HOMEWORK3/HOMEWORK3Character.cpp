@@ -9,6 +9,7 @@
 #include "GameFramework/Controller.h"
 #include "TPSWeapon.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Net/UnrealNetwork.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AHOMEWORK3Character
@@ -59,6 +60,7 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	WeaponSocketName = "WeaponSocket";
 
 	TotalBulletNum = 50;
+	//CurrentWeapon = nullptr;
 }
 
 FVector AHOMEWORK3Character::GetPawnViewLocation() const
@@ -137,12 +139,14 @@ void AHOMEWORK3Character::Tick(float DeltaTime)
 	FollowCamera->SetFieldOfView(CurrentFOV);
 
 	// TODO： 优化以下的拳击逻辑，在Tick中过于消耗性能
-	if (bPunching) {
-		CurrentWeapon->MeshComp->SetVisibility(false);
-	}
-	else {
-		CurrentWeapon->MeshComp->SetVisibility(true);
-	}
+	/*if (CurrentWeapon) {
+		if (bPunching) {
+			CurrentWeapon->MeshComp->SetVisibility(false);
+		}
+		else {
+			CurrentWeapon->MeshComp->SetVisibility(true);
+		}
+	}*/
 
 	CurrentFocusItem = GetFocusItem();// 获取当前注视的物体
 }
@@ -153,13 +157,17 @@ void AHOMEWORK3Character::BeginPlay()
 	DefaultFOV = FollowCamera->FieldOfView;// store the default to recover 
 	BulletNum = TotalBulletNum;
 
-	FActorSpawnParameters SpawnParams;
-	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	CurrentWeapon = GetWorld()->SpawnActor<ATPSWeapon>(WeaponClasss, FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
-	
-	CurrentWeapon->SetOwner(this);
-	CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
-	UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
+	if (HasAuthority()) {
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		CurrentWeapon = GetWorld()->SpawnActor<ATPSWeapon>(WeaponClasss, FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+
+		if (CurrentWeapon) {
+			CurrentWeapon->SetOwner(this);
+			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
+			UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
+		}
+	}
 }
 
 void AHOMEWORK3Character::OnResetVR()
@@ -261,6 +269,7 @@ void AHOMEWORK3Character::EndAim()
 
 ATPS_PickUpActor* AHOMEWORK3Character::GetFocusItem()
 {
+	// 从当前的视角使用射线检测判断是否注视Item
 	FVector EyeLocation;
 	FRotator EyeRotation;
 	GetActorEyesViewPoint(EyeLocation, EyeRotation);
@@ -278,7 +287,6 @@ ATPS_PickUpActor* AHOMEWORK3Character::GetFocusItem()
 
 	ATPS_PickUpActor* PickUpItem = Cast<ATPS_PickUpActor>(HitResult.GetActor());
 	if (PickUpItem) {
-		UE_LOG(LogTemp, Log, TEXT("Focus on an object!"));
 		BeginZoom();
 		bFocusing = true;
 	}
@@ -303,7 +311,9 @@ void AHOMEWORK3Character::PickUp()
 
 void AHOMEWORK3Character::AddWeapon(ATPSWeapon* NewWeapon)
 {
-	if (NewWeapon == CurrentWeapon)return;
+	if (NewWeapon == CurrentWeapon) {
+		return;
+	}
 
 	if (NewWeapon) {
 		if (CurrentWeapon) {
@@ -356,4 +366,11 @@ void AHOMEWORK3Character::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void AHOMEWORK3Character::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(AHOMEWORK3Character, CurrentWeapon);
 }
