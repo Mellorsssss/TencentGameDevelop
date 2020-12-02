@@ -2,13 +2,15 @@
 
 
 #include "HealthComponent.h"
-
+#include "TPSGameMode.h"
+#include "Net/UnrealNetwork.h"
 
 UHealthComponent::UHealthComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
 	DefaultHealthPoints = 100.f;
 
+	SetIsReplicatedByDefault(true);
 }
 
 
@@ -19,9 +21,12 @@ void UHealthComponent::BeginPlay()
 
 	HealthPoints = DefaultHealthPoints;
 
-	AActor* MyOwner = GetOwner();
-	if (MyOwner) {
-		MyOwner->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::OnHealthChangeHandler);
+	// 只在服务器上处理生命值变动的逻辑
+	if (GetOwnerRole() == ROLE_Authority){
+		AActor* MyOwner = GetOwner();
+		if (MyOwner) {
+			MyOwner->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::OnHealthChangeHandler);
+		}
 	}
 }
 
@@ -35,4 +40,19 @@ void UHealthComponent::OnHealthChangeHandler(AActor* DamagedActor, float Damage,
 	UE_LOG(LogTemp, Log, TEXT("Current hp is %f"), HealthPoints);
 
 	OnHealthChanged.Broadcast(this, HealthPoints, Damage,DamageType, InstigatedBy, DamageCauser);// 传递生命值变化事件
+
+	if (HealthPoints <= 0.f) {
+		ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM) {
+			UE_LOG(LogTemp, Log, TEXT("HealthComp: killed!"));
+			GM->OnActorKilled.Broadcast(DamagedActor, DamageCauser, InstigatedBy);
+		}
+	}
+}
+
+void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(UHealthComponent, HealthPoints);
 }

@@ -17,6 +17,9 @@ class HOMEWORK3_API ATPSPlayerState : public APlayerState
 protected:
 	FText PlayerName;
 
+	int PlayerKillNum;
+
+	int PlayerDiedNum;
 public:
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 	void AddScore(float ScoreDelta);
@@ -27,4 +30,16 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 	FString GetName()const;
+
+	UFUNCTION(BlueprintCallable)
+	int GetPlayerKillNum() const;
+
+	UFUNCTION(BlueprintCallable)
+	int GetPlayerDiedNum() const;
+
+	UFUNCTION(BlueprintCallable)
+	void AddPlayerKillNum();
+
+	UFUNCTION(BlueprintCallable)
+	void AddPlayerDiedNum();
 };

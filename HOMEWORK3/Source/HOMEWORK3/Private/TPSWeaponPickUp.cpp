@@ -13,7 +13,6 @@ ATPSWeaponPickUp::ATPSWeaponPickUp()
 void ATPSWeaponPickUp::Pickup(APawn* InstigatorPawn)
 {
 	Super::Pickup(InstigatorPawn);
-	UE_LOG(LogTemp, Log, TEXT("Weapon is picked up"));
 	AHOMEWORK3Character* MyPawn = Cast<AHOMEWORK3Character>(InstigatorPawn);
 	FActorSpawnParameters SpawnInfo;
 	SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;

@@ -17,3 +17,23 @@ FString ATPSPlayerState::GetName() const
 	return GetPlayerName();
 }
 
+int ATPSPlayerState::GetPlayerKillNum() const
+{
+	return PlayerKillNum;
+}
+
+int ATPSPlayerState::GetPlayerDiedNum() const
+{
+	return PlayerDiedNum;
+}
+
+void ATPSPlayerState::AddPlayerKillNum()
+{
+	PlayerKillNum += 1;
+}
+
+void ATPSPlayerState::AddPlayerDiedNum()
+{
+	PlayerDiedNum += 1;
+}
+

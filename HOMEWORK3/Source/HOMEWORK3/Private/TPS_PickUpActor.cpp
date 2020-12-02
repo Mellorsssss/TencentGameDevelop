@@ -21,7 +21,6 @@ ATPS_PickUpActor::ATPS_PickUpActor()
 
 void ATPS_PickUpActor::Pickup(APawn* InstigatorPawn)
 {
-	UE_LOG(LogTemp, Log, TEXT("Picking Up by the Actor"));
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), PickUpSound, MyMesh->GetComponentLocation());
 
 	/*bHolding = !bHolding;

@@ -11,6 +11,7 @@ class ATPSWeapon;
 class UHealthComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBulletNumChange, int, BulletNum, int, BulletNumDelta);
+//DECLARE_DYNAMIC_MULTICAST_DELEGATE(FActorDied, )
 
 UCLASS(config=Game)
 class AHOMEWORK3Character : public ACharacter
@@ -83,7 +84,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	USceneComponent* HoldingComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
 	UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
@@ -102,8 +103,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Sound")
 	USoundBase* PickUpSound;
 	
-	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Player")
 	bool bDied;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	float DiedSpanTime;
 protected:
 
 	// Called when the game starts or when spawned

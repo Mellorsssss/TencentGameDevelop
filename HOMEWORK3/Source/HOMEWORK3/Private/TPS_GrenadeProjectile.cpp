@@ -93,9 +93,7 @@ void ATPS_GrenadeProjectile::Explode(FVector ExplodeLocation)
 {
 	TArray<AActor*> IgnoreActors;
 	IgnoreActors.Add(this);
-	if(UGameplayStatics::ApplyRadialDamage(this, Damage, ExplodeLocation, DamageRadius, DamageType, IgnoreActors, this, GetOwner()->GetInstigatorController(), true)){
-		UE_LOG(LogTemp, Log, TEXT("apply the damage!"));
-	}
+	UGameplayStatics::ApplyRadialDamage(this, Damage, ExplodeLocation, DamageRadius, DamageType, IgnoreActors, this, GetOwner()->GetInstigatorController(), true);
 	Destroy();
 }
 

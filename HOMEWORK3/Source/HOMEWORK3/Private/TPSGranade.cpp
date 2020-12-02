@@ -30,7 +30,6 @@ void ATPSGranade::Fire()
 
 void ATPSGranade::ServerShoot_Implementation()
 {
-	UE_LOG(LogTemp, Log, TEXT("Server shoot the projectile!"));
 	Fire();
 }
 

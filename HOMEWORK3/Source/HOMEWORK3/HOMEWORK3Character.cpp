@@ -11,12 +11,13 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "HealthComponent.h"
+#include "TPSGameMode.h"
 #include "Kismet/GameplayStatics.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AHOMEWORK3Character
 
-AHOMEWORK3Character::AHOMEWORK3Character()
+AHOMEWORK3Character::AHOMEWORK3Character() 
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -67,7 +68,7 @@ AHOMEWORK3Character::AHOMEWORK3Character()
 	WeaponSocketName = "WeaponSocket";
 
 	TotalBulletNum = 50;
-	//CurrentWeapon = nullptr;
+	DiedSpanTime = 3.0f;
 }
 
 void AHOMEWORK3Character::Tick(float DeltaTime)
@@ -96,7 +97,6 @@ void AHOMEWORK3Character::BeginPlay()
 		if (CurrentWeapon) {
 			CurrentWeapon->SetOwner(this);
 			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
-			UE_LOG(LogTemp, Log, TEXT("WEAPON SPAWN"));
 		}
 	}
 }
@@ -116,9 +116,6 @@ FRotator AHOMEWORK3Character::GetAimOffsets() const
 	const FRotator AimRotationLocalSpace = AimLocalSpace.Rotation();
 	return AimRotationLocalSpace;
 }
-
-//////////////////////////////////////////////////////////////////////////
-// Input
 
 void AHOMEWORK3Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
@@ -302,11 +299,7 @@ void AHOMEWORK3Character::PickUp()
 {
 
 	if (CurrentFocusItem) {
-		UE_LOG(LogTemp, Log, TEXT("PickUp the item success"));
 		CurrentFocusItem->Pickup(this);
-	}
-	else {
-		UE_LOG(LogTemp, Log, TEXT("PickUp item failure!"));
 	}
 }
 
@@ -382,16 +375,22 @@ void AHOMEWORK3Character::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(AHOMEWORK3Character, CurrentWeapon);
+	DOREPLIFETIME(AHOMEWORK3Character, bDied);
 }
 
 void AHOMEWORK3Character::OnHealthChangeHandler(UHealthComponent* HealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
 {
 	if (!bDied && Health <= 0.f) {
 		bDied = true;
-		UE_LOG (LogTemp, Log, TEXT("The player is dead!"));
 		GetMovementComponent()->StopMovementImmediately();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		DetachFromControllerPendingDestroy();
-		SetLifeSpan(10.0f);
+		SetLifeSpan(DiedSpanTime);
+
+		ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM) {
+			UE_LOG(LogTemp, Log, TEXT("Charcter: The player is dead!"));
+			GM->OnPlayerDied.Broadcast();
+		}
 	}
 }

@@ -64,8 +64,7 @@ void ATPSWeapon::Fire()
 			HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(HitResult.PhysMaterial.Get());
 			
 			if (HitSurfaceType == SURFACETYPE_FLESHHEAD) {
-				UE_LOG(LogTemp, Log, TEXT("Hit the head!!!"));
-				ActualDamge *= 2.0;
+				ActualDamge *= 5.0f;
 			}
 
 			ApplyDamage(HitResult.GetActor(),ActualDamge, EyeRotation.Vector(), HitResult, WeaponOwner->GetInstigatorController());
@@ -80,9 +79,6 @@ void ATPSWeapon::Fire()
 		if (HasAuthority()) {
 			FireTraceResult.TraceEnd = TraceEnd;
 			FireTraceResult.SurfaceType = HitSurfaceType;
-			if (FireTraceResult.SurfaceType != SURFACETYPE_DEFAULT) {
-				UE_LOG(LogTemp, Log, TEXT("Server Transfer Surface Type!"));
-			}
 		}
 	}
 }
@@ -115,7 +111,6 @@ void ATPSWeapon::PlayFireEffect(FVector TraceEnd)
 
 void ATPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd)
 {
-	UE_LOG (LogTemp, Log, TEXT("Play the effect"));
 	// 根据命中的物理材质不同，选择不同的粒子系统
 	UParticleSystem* SelectedEffect = nullptr;
 	USoundBase* SelectSound = nullptr;
@@ -151,7 +146,6 @@ void ATPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector TraceEnd
 
 void ATPSWeapon::ServerFire_Implementation()
 {
-	UE_LOG(LogTemp, Log, TEXT("Fire on the server."));
 	Fire();
 }
 

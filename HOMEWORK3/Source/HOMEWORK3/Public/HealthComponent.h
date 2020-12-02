@@ -25,8 +25,9 @@ protected:
 	UFUNCTION()
 	void OnHealthChangeHandler(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps)const ;
 public:
-	UPROPERTY(BlueprintReadOnly, Category = "HealthComponent")
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "HealthComponent")
 	float HealthPoints;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "HealthComponent")
