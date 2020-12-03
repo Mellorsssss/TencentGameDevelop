@@ -5,11 +5,15 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "../HOMEWORK3Character.h"
+#include "TPSPlayerController.h"
+#include "TPSPlayerState.h"
 #include "TPSGameMode.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnActorKilled, AActor*, KilledActor, AActor*, KillerActor, AController*, KillerController);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnActorKilled, AActor*, KilledActor, APlayerState*,KilledPlayerState, AActor*, KillerActor, AController*, KillerController);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerDied);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGameOver);
+
+class ATPSPlayerState;
 /**
  * 
  */
@@ -23,8 +27,11 @@ protected:
 
 	FTimerHandle MatchTimerHandler;
 
+	UFUNCTION()
 	void RespawnDeadPlayer();
 
+	UFUNCTION()
+	void ScoreProcess(AActor* KilledActor, APlayerState* KilledPlayerState,AActor* KillerActor, AController* KillerController);
 public:
 	ATPSGameMode();
 

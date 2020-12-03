@@ -18,6 +18,7 @@ void ATPSGameMode::StartPlay()
 	Super::StartPlay();
 	GetWorldTimerManager().SetTimer(MatchTimerHandler, this, &ATPSGameMode::GameOver, MatchPeriod, false);
 	OnPlayerDied.AddDynamic(this, &ATPSGameMode::RespawnDeadPlayer);
+	OnActorKilled.AddDynamic(this, &ATPSGameMode::ScoreProcess);
 }
 
 void ATPSGameMode::RespawnDeadPlayer()
@@ -30,6 +31,27 @@ void ATPSGameMode::RespawnDeadPlayer()
 		{
 			RestartPlayer(PC);
 		}
+	}
+}
+
+void ATPSGameMode::ScoreProcess(AActor* KilledActor, APlayerState* KilledPlayerState, AActor* KillerActor, AController* KillerController)
+{
+	// 增加凶手玩家的分数
+	ATPSPlayerController* KillerPlayerContorller = Cast<ATPSPlayerController>(KillerController);
+	if (KillerPlayerContorller) {
+		UE_LOG(LogTemp, Log, TEXT("GM: Killer cast success!"));
+		ATPSPlayerState* KillerPlayerState = Cast<ATPSPlayerState>(KillerPlayerContorller->PlayerState);
+		if (KillerPlayerState) {
+			KillerPlayerState->AddScore(100);
+			KillerPlayerState->AddPlayerKillNum();
+		}
+	}
+
+	// 增加被杀玩家的死亡次数
+	ATPSPlayerState* VictimPlayerState = Cast<ATPSPlayerState>(KilledPlayerState);
+	if (VictimPlayerState) {
+		UE_LOG(LogTemp, Log, TEXT("Victim : Add Dead Nun!"));
+		VictimPlayerState->AddPlayerDiedNum();
 	}
 }
 

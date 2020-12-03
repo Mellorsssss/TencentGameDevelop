@@ -39,15 +39,15 @@ void UHealthComponent::OnHealthChangeHandler(AActor* DamagedActor, float Damage,
 	HealthPoints = FMath::Clamp(HealthPoints - Damage, 0.f, DefaultHealthPoints);
 	UE_LOG(LogTemp, Log, TEXT("Current hp is %f"), HealthPoints);
 
-	OnHealthChanged.Broadcast(this, HealthPoints, Damage,DamageType, InstigatedBy, DamageCauser);// 传递生命值变化事件
-
 	if (HealthPoints <= 0.f) {
 		ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
 		if (GM) {
 			UE_LOG(LogTemp, Log, TEXT("HealthComp: killed!"));
-			GM->OnActorKilled.Broadcast(DamagedActor, DamageCauser, InstigatedBy);
+			GM->OnActorKilled.Broadcast(DamagedActor, Cast<ACharacter>(GetOwner())->GetPlayerState(), DamageCauser, InstigatedBy);
 		}
 	}
+
+	OnHealthChanged.Broadcast(this, HealthPoints, Damage,DamageType, InstigatedBy, DamageCauser);// 传递生命值变化事件，考虑到时序，此处最后调用
 }
 
 void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const

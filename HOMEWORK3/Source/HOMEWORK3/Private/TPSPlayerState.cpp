@@ -29,11 +29,13 @@ int ATPSPlayerState::GetPlayerDiedNum() const
 
 void ATPSPlayerState::AddPlayerKillNum()
 {
+	UE_LOG(LogTemp, Log, TEXT("Kill a person!!"));
 	PlayerKillNum += 1;
 }
 
 void ATPSPlayerState::AddPlayerDiedNum()
 {
+	UE_LOG(LogTemp, Log, TEXT("Died!"));
 	PlayerDiedNum += 1;
 }
 
