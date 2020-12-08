@@ -313,9 +313,14 @@ ATPS_PickUpActor* AHOMEWORK3Character::GetFocusItem()
 
 void AHOMEWORK3Character::PickUp()
 {
-
-	if (CurrentFocusItem) {
-		CurrentFocusItem->Pickup(this);
+	if (HasAuthority()) {
+		if (CurrentFocusItem) {
+			CurrentFocusItem->Pickup(this);
+		}
+	}
+	else {
+		UE_LOG(LogTemp, Log, TEXT("Server pick the item up!"));
+		ServerPickUp();
 	}
 }
 
@@ -327,22 +332,50 @@ void AHOMEWORK3Character::Reload()
 	OnBulletNumChange(BulletNum, BulletNumDelta);
 }
 
+
+void AHOMEWORK3Character::ServerAddWeapon_Implementation(ATPSWeapon* NewWeapon)
+{
+	AddWeapon(NewWeapon);
+}
+
+bool AHOMEWORK3Character::ServerAddWeapon_Validate(ATPSWeapon* NewWeapon)
+{
+	return true;
+}
+
+void AHOMEWORK3Character::ServerPickUp_Implementation()
+{
+	PickUp();
+}	
+
+bool AHOMEWORK3Character::ServerPickUp_Validate()
+{
+	return true;
+}
+
 void AHOMEWORK3Character::AddWeapon(ATPSWeapon* NewWeapon)
 {
-	if (NewWeapon == CurrentWeapon) {
-		return;
-	}
-
-	if (NewWeapon) {
-		if (CurrentWeapon) {
-			CurrentWeapon->Destroy();
+	if (NewWeapon && HasAuthority()) {// 客户端不执行该代码，在服务器上执行
+		UE_LOG(LogTemp, Log, TEXT("charcter : add the weapon!"));
+		if (NewWeapon == CurrentWeapon) {
+			return;
 		}
 
-		CurrentWeapon = NewWeapon;
-		CurrentWeapon->SetOwner(this);
-		CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
-	}
+		if (NewWeapon) {
+			if (CurrentWeapon) {
+				CurrentWeapon->Destroy();
+			}
 
+			CurrentWeapon = NewWeapon;
+			CurrentWeapon->SetOwner(this);
+			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocketName);
+		}
+
+	}
+	else {
+		UE_LOG(LogTemp, Log, TEXT("charcter : run on the server!"));
+		ServerAddWeapon(NewWeapon);
+	}
 }
 
 void AHOMEWORK3Character::TurnAtRate(float Rate)
@@ -392,6 +425,7 @@ void AHOMEWORK3Character::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 
 	DOREPLIFETIME(AHOMEWORK3Character, CurrentWeapon);
 	DOREPLIFETIME(AHOMEWORK3Character, bDied);
+	DOREPLIFETIME(AHOMEWORK3Character, CurrentFocusItem);
 }
 
 void AHOMEWORK3Character::OnHealthChangeHandler(UHealthComponent* HealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)

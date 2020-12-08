@@ -94,7 +94,7 @@ public:
 	ATPSWeapon* CurrentWeapon;
 	
 	// 当前注视的物品
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+	UPROPERTY(Replicated, EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
 	ATPS_PickUpActor* CurrentFocusItem;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon")
@@ -175,6 +175,11 @@ protected:
 
 	void Reload();
 
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerAddWeapon(ATPSWeapon* NewWeapon);
+
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerPickUp();
 	// void RemoveWeapon();
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
