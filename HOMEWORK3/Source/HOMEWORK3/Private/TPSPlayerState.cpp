@@ -2,6 +2,7 @@
 
 
 #include "TPSPlayerState.h"
+#include "Net/UnrealNetwork.h"
 
 void ATPSPlayerState::AddScore(float ScoreDelta) {
 	Score += ScoreDelta;
@@ -37,5 +38,14 @@ void ATPSPlayerState::AddPlayerDiedNum()
 {
 	UE_LOG(LogTemp, Log, TEXT("Died!"));
 	PlayerDiedNum += 1;
+}
+
+void ATPSPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ATPSPlayerState, PlayerName);
+	DOREPLIFETIME(ATPSPlayerState, PlayerKillNum);
+	DOREPLIFETIME(ATPSPlayerState, PlayerDiedNum);
 }
 

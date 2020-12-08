@@ -13,14 +13,17 @@ UCLASS()
 class HOMEWORK3_API ATPSPlayerState : public APlayerState
 {
 	GENERATED_BODY()
-	
-protected:
+
+public:
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "PlayerState")
 	FText PlayerName;
 
+	UPROPERTY(Replicated)
 	int PlayerKillNum;
 
+	UPROPERTY(Replicated)
 	int PlayerDiedNum;
-public:
+
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 	void AddScore(float ScoreDelta);
 
@@ -41,4 +44,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void AddPlayerDiedNum();
+protected:
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty> & OutLifetimeProps) const override;
 };

@@ -82,6 +82,22 @@ void AHOMEWORK3Character::Tick(float DeltaTime)
 	CurrentFocusItem = GetFocusItem();// 获取当前注视的物体
 }
 
+float AHOMEWORK3Character::GetHealth() const
+{
+	if (HealthComponent) {
+		return HealthComponent->HealthPoints;
+	}
+	return 0.f;
+}
+
+float AHOMEWORK3Character::GetMaxHealth() const
+{
+	if (HealthComponent) {
+		return HealthComponent->DefaultHealthPoints;
+	}
+	return 100.f;
+}
+
 void AHOMEWORK3Character::BeginPlay()
 {
 	Super::BeginPlay();

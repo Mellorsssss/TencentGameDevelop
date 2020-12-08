@@ -200,5 +200,10 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "EventTest")
 	void OnBulletNumChange(int CurrentBulletNum, int BulletNumDelta);
 
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	float GetHealth() const;
+
+	UFUNCTION(BlueprintCallable, Category =  "Player")
+	float GetMaxHealth() const;
 };
 
