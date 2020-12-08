@@ -32,7 +32,7 @@ void UHealthComponent::BeginPlay()
 
 void UHealthComponent::OnHealthChangeHandler(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
 {
-	if (Damage < 0.f) {
+	if (Damage < 0.f || HealthPoints <=0.f) {
 		return;
 	}
 
