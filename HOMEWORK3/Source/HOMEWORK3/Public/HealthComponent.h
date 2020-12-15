@@ -33,6 +33,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "HealthComponent")
 	float DefaultHealthPoints;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "HealthComponent")
+	float HealDelta;
+
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChangeSignature OnHealthChanged;
+
+	UFUNCTION(BlueprintCallable, Category = "HealthComponent")
+	void Heal();
 };

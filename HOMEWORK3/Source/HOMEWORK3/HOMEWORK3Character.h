@@ -87,7 +87,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
 	UHealthComponent* HealthComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Player")
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
 	TSubclassOf<ATPSWeapon> WeaponClasss;
 
 	UPROPERTY(Replicated,EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
@@ -151,6 +151,7 @@ protected:
 
 	void UnUseControllerRotationYaw();
 
+	
 	void BeginZoom();
 
 	void EndZoom();
@@ -165,8 +166,10 @@ protected:
 
 	void EndPunch();
 
+	UFUNCTION(BlueprintCallable, Category = "Player")
 	void StartAim();
 
+	UFUNCTION(BlueprintCallable, Category = "Player")
 	void EndAim();
 
 	ATPS_PickUpActor* GetFocusItem();

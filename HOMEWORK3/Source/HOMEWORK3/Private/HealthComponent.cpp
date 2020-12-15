@@ -9,6 +9,7 @@ UHealthComponent::UHealthComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
 	DefaultHealthPoints = 100.f;
+	HealDelta = 10.f;
 
 	SetIsReplicatedByDefault(true);
 }
@@ -55,4 +56,9 @@ void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(UHealthComponent, HealthPoints);
+}
+
+void UHealthComponent::Heal()
+{
+	HealthPoints = FMath::Clamp(HealthPoints + HealDelta, 0.f, DefaultHealthPoints);
 }

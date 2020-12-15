@@ -24,6 +24,7 @@ ATPSWeapon::ATPSWeapon()
 	MuzzleSocketName = "Muzzle";
 	TraceSocketName = "Target";
 
+	BulletSpread = 1.f;
 	// 设置可以复制
 	SetReplicates(true);
 }
@@ -47,8 +48,19 @@ void ATPSWeapon::Fire()
 		FRotator EyeRotation;
 		WeaponOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
 
+		FVector ShotDirection = EyeRotation.Vector();
+
 		FVector TraceBegin = EyeLocation;
-		FVector	TraceEnd = EyeLocation + (EyeRotation.Vector() * ShootRange);
+
+
+		// Bullet Spread
+		float HalfRad = FMath::DegreesToRadians(BulletSpread);
+		ShotDirection = FMath::VRandCone(ShotDirection, HalfRad, HalfRad);
+
+		FVector	TraceEnd = EyeLocation + (ShotDirection* ShootRange);
+
+
+
 
 		FCollisionQueryParams CollisionQueryParams;
 		CollisionQueryParams.AddIgnoredActor(WeaponOwner);
