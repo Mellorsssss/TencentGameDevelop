@@ -13,6 +13,7 @@
 #include "HealthComponent.h"
 #include "TPSGameMode.h"
 #include "Kismet/GameplayStatics.h"
+#include "TPSPlayerController.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AHOMEWORK3Character
@@ -432,15 +433,18 @@ void AHOMEWORK3Character::OnHealthChangeHandler(UHealthComponent* HealthComp, fl
 {
 	if (!bDied && Health <= 0.f) {
 		bDied = true;
+		ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM) {
+			UE_LOG(LogTemp, Log, TEXT("Charcter: The player is dead!"));
+			ATPSPlayerController* PC = Cast<ATPSPlayerController>(GetController());
+			PC->OnPlayerDiedHandle();
+		}
+
 		GetMovementComponent()->StopMovementImmediately();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		DetachFromControllerPendingDestroy();
 		SetLifeSpan(DiedSpanTime);
 
-		ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
-		if (GM) {
-			UE_LOG(LogTemp, Log, TEXT("Charcter: The player is dead!"));
-			GM->OnPlayerDied.Broadcast();
-		}
+		
 	}
 }

@@ -58,7 +58,7 @@ void ATPSGameMode::ScoreProcess(AActor* KilledActor, APlayerState* KilledPlayerS
 void ATPSGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	RespawnDeadPlayer();
+	//RespawnDeadPlayer();
 }
 
 

@@ -50,16 +50,14 @@ void ATPSWeapon::Fire()
 
 		FVector ShotDirection = EyeRotation.Vector();
 
-		FVector TraceBegin = EyeLocation;
+		FVector TraceBegin = EyeLocation;// 发射起点为屏幕中心
 
 
-		// Bullet Spread
+		// 设置散射
 		float HalfRad = FMath::DegreesToRadians(BulletSpread);
 		ShotDirection = FMath::VRandCone(ShotDirection, HalfRad, HalfRad);
 
 		FVector	TraceEnd = EyeLocation + (ShotDirection* ShootRange);
-
-
 
 
 		FCollisionQueryParams CollisionQueryParams;
@@ -75,6 +73,7 @@ void ATPSWeapon::Fire()
 		if (GetWorld()->LineTraceSingleByChannel(HitResult, TraceBegin, TraceEnd, ECC_GameTraceChannel1, CollisionQueryParams)) {
 			HitSurfaceType = UPhysicalMaterial::DetermineSurfaceType(HitResult.PhysMaterial.Get());
 			
+			// 爆头伤害
 			if (HitSurfaceType == SURFACETYPE_FLESHHEAD) {
 				ActualDamge *= 5.0f;
 			}
@@ -88,6 +87,7 @@ void ATPSWeapon::Fire()
 
 		PlayFireEffect(TraceEnd);
 
+		// 复制弹道信息
 		if (HasAuthority()) {
 			FireTraceResult.TraceEnd = TraceEnd;
 			FireTraceResult.SurfaceType = HitSurfaceType;

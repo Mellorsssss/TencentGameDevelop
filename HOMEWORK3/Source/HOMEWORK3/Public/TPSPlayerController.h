@@ -13,5 +13,17 @@ UCLASS()
 class HOMEWORK3_API ATPSPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+	protected:
+	void DeathHandler();
+
+	FTimerHandle DeathTimer;
+	public:
+	ATPSPlayerController();
+
+	UFUNCTION()
+	void OnPlayerDiedHandle();
 	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="PlayerController")
+	float RespawnWaitTime;
 };

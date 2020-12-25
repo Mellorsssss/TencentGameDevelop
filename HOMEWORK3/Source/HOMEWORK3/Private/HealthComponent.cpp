@@ -45,6 +45,7 @@ void UHealthComponent::OnHealthChangeHandler(AActor* DamagedActor, float Damage,
 		if (GM) {
 			UE_LOG(LogTemp, Log, TEXT("HealthComp: killed!"));
 			GM->OnActorKilled.Broadcast(DamagedActor, Cast<ACharacter>(GetOwner())->GetPlayerState(), DamageCauser, InstigatedBy);
+			//GM->GetWorldTimerManager().SetTimer(RespawnTimerHandler,this, &UHealthComponent::DeathHandler, 5.0f, false);
 		}
 	}
 
@@ -56,6 +57,15 @@ void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(UHealthComponent, HealthPoints);
+}
+
+void UHealthComponent::DeathHandler()
+{
+	ATPSGameMode* GM = Cast<ATPSGameMode>(GetWorld()->GetAuthGameMode());
+	if (GM) {
+		UE_LOG(LogTemp, Log, TEXT("Handle the death event!"));
+		GM->OnPlayerDied.Broadcast();
+	}
 }
 
 void UHealthComponent::Heal()
